@@ -5,14 +5,12 @@ import { MaterialModule } from './shared/material/material/material.module';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
+import { LayoutComponent } from './layout/layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    SidebarComponent
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -23,8 +21,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   ],
   exports: [
     AppComponent,
-    HeaderComponent,
-    SidebarComponent
+    LayoutComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
