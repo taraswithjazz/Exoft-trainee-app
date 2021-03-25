@@ -1,7 +1,48 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="over" [(opened)]="opened" opened>
-    <div class="container">
-      <h3>Sidenav</h3>
+    <div class="container-header">
+      <h5>GMFCTN!</h5>
+      <button
+        class="nav-toggle-button"
+        mat-icon-button
+        (click)="sidenav.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div class="container-body">
+      <div mat-card-avatar class="container-image"></div>
+      <h3>Taras Chervinka</h3>
+      <a mat-raised-button class="container-button"> Edit profile</a>
+      <a mat-raised-button class="container-button"> Change password </a>
+      <a mat-raised-button class="container-button"> Logout </a>
+      <div class="total">
+        <a class="achievements">Total:</a>
+        <span>4 Badges</span>
+      </div>
+      <div class="exp">
+        <a class="achievements">EXP:</a>
+        <span>70 XP</span>
+      </div>
+      <a
+        mat-button
+        class="navigation-item"
+        routerLink="dashboard"
+        routerLinkActive="container-active"
+      >
+        Dashboard
+      </a>
+      <a
+        mat-button
+        class="navigation-item"
+        routerLink="badges"
+        routerLinkActive="container-active"
+      >
+        Badges
+      </a>
+      <a mat-button class="navigation-item" routerLink="" routerLinkActive="">
+        Order
+      </a>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -15,30 +56,42 @@
         >
           <mat-icon>menu</mat-icon>
         </button>
-        <span>GMFCTN!</span>
+        <h3>GMFCTN!</h3>
       </div>
       <div>
         <a
           mat-button
-          class="navigation-item"
           routerLink="dashboard"
           routerLinkActive="router-link-active"
         >
           Dashboard
         </a>
-        <a
-          mat-button
-          class="navigation-item"
-          routerLink="badges"
-          routerLinkActive="router-link-active"
-        >
+        <a mat-button routerLink="badges" routerLinkActive="router-link-active">
           Badges
         </a>
-        <a mat-button class="navigation-item" routerLink="" routerLinkActive="">
-          Order
-        </a>
+        <a mat-button routerLink="" routerLinkActive=""> Order </a>
       </div>
-      <span>Taras Chervinka</span>
+      <div class="menu">
+        <div mat-card-avatar class="header-image"></div>
+        <h5>Taras Chervinka</h5>
+        <button
+          mat-icon-button
+          class="logout-icon"
+          aria-label="Example icon-button with menu icon"
+          [matMenuTriggerFor]="beforeMenu"
+        >
+          <mat-menu
+            #beforeMenu="matMenu"
+            xPosition="before"
+            class="logout-menu"
+          >
+            <button mat-menu-item>Edit Profile</button>
+            <button mat-menu-item>Change Password</button>
+            <button mat-menu-item>Log Out</button>
+          </mat-menu>
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+      </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
