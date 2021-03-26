@@ -1,1 +1,50 @@
-<p>top-chart works!</p>
+<div class="chart-container">
+  <div class="chart-header">
+    <span class="title">TOP CHART</span>
+  </div>
+  <div class="chart-body">
+    <div class="user-table">
+      <div class="titles">
+        <span>Name</span>
+        <span>Total XP</span>
+      </div>
+      <mat-list class="list">
+        <mat-list-item *ngFor="let user of users">
+          <img matListAvatar class="user-image" src="{{ user.avatar }}" />
+          <div matLine class="username">
+            <span class="user-title">{{ user.name }}</span>
+            <span>{{ user.surname }}</span>
+          </div>
+          <span class="exp">{{ user.xp }} xp </span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="chart" style="width: 50%">
+      <mat-list>
+        <mat-list-item *ngFor="let user of users">
+          <div
+            class="bar"
+            [style.background-color]="user.color"
+            [style.width]="user.size"
+          ></div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>
+<!-- <div class="grafico">
+  <div class="content">
+    <div class="bars" *ngFor="let user of users">
+      <span>{{ user.xp }}</span>
+      <div
+        class="bar"
+        [style.background-color]="user.color"
+        [style.width]="user.size"
+      ></div>
+    </div>
+  </div>
+  <div class="line"></div>
+  <div class="legends">
+    <span *ngFor="let user of users">{{ user.name }}</span>
+  </div>
+</div> -->

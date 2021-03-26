@@ -1,12 +1,13 @@
 .container-button {
   width: 40px;
   height: 30px;
-  background-color: gray;
+  background-color: rgb(85, 201, 0);
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 0;
+  box-shadow: none;
 }
 .title {
   font-size: 14px;
@@ -59,8 +60,4 @@
 }
 .exp {
   color: gold;
-}
-
-:host ::ng-deep .mat-list-item-content {
-  padding: 0 !important;
 }

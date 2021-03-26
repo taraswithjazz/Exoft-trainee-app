@@ -10,6 +10,7 @@ import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatMenuModule} from '@angular/material/menu'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {MatListModule} from '@angular/material/list'
+import {    MatTableModule} from '@angular/material/table'
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {MatListModule} from '@angular/material/list'
     MatSidenavModule,
     MatMenuModule,
     MatGridListModule,
-    MatListModule
+    MatListModule,
+    MatTableModule
   ]
 })
 export class MaterialModule { }
