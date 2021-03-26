@@ -1,0 +1,62 @@
+.container-button {
+  width: 40px;
+  height: 30px;
+  background-color: gray;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+}
+.title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.personal-achievements {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-between;
+  color: #fff;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+.mat-list-item {
+  font-size: 14px;
+  color: #fff;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+:host /deep/ .mat-list-item-content {
+  padding: 0 !important;
+  height: 42px !important;
+}
+.mat-list-base .mat-list-item.mat-2-line,
+.mat-list-base .mat-list-option.mat-2-line {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.time {
+  font-size: 12px !important;
+}
+.circle {
+  background: gold;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+.mat-list-base {
+  padding-top: 16px;
+}
+.title-time {
+  display: flex !important;
+  flex-direction: column;
+}
+.exp {
+  color: gold;
+}

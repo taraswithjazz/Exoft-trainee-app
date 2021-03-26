@@ -1,1 +1,17 @@
-<p>personal-achievements works!</p>
+<div class="personal-achievements">
+  <div class="header">
+    <span class="title">PERSONAL ACHIEVEMENTS</span>
+    <a mat-raised-button class="container-button">request</a>
+  </div>
+  <mat-list>
+    <mat-list-item *ngFor="let achievement of achievements">
+      <img matListAvatar src="{{ achievement.avatar }}" alt="..." />
+      <div matLine class="title-time">
+        <span class="achievement-title">{{ achievement.title }}</span>
+        <span class="time">{{ achievement.granted }} mins ago</span>
+      </div>
+      <span class="circle"> </span>
+      <span class="exp">&nbsp; + {{ achievement.xp }} xp </span>
+    </mat-list-item>
+  </mat-list>
+</div>
