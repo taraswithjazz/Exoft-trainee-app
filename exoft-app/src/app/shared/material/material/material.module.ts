@@ -8,6 +8,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatMenuModule} from '@angular/material/menu'
+import {MatGridListModule} from '@angular/material/grid-list'
 
 
 
@@ -24,7 +25,8 @@ import {MatMenuModule} from '@angular/material/menu'
     MatIconModule,
     MatCardModule,
     MatSidenavModule,
-    MatMenuModule
+    MatMenuModule,
+    MatGridListModule
   ]
 })
 export class MaterialModule { }

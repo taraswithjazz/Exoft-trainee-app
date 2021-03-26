@@ -9,7 +9,7 @@ const routes: Routes = [
   },
   {
     path: 'dashboard',
-    loadChildren: () => import('./modules/dashboard/dashboard/dashboard.module').then(module => module.DashboardModule)
+    loadChildren: () => import('./modules/dashboard/dashboard.module').then(module => module.DashboardModule)
   },
   {
     path: 'badges',

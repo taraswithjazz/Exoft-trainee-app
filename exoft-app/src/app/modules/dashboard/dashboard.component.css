@@ -1,0 +1,11 @@
+mat-grid-list {
+  margin: 10px;
+}
+mat-grid-tile {
+  background-color: lawngreen;
+}
+.greetings {
+  width: 100%;
+  padding: 30px;
+  align-items: flex-end;
+}
