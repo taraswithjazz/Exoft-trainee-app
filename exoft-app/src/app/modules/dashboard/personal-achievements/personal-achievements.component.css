@@ -12,7 +12,7 @@
   font-size: 14px;
   font-weight: bold;
 }
-.personal-achievements {
+.personal-achievements-container {
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -59,4 +59,8 @@
 }
 .exp {
   color: gold;
+}
+
+:host ::ng-deep .mat-list-item-content {
+  padding: 0 !important;
 }
