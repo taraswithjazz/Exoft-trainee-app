@@ -10,14 +10,14 @@ mat-sidenav {
   background-color: rgb(65, 71, 81);
   color: #fff;
 }
-.container-header {
+.sidenav-container-header {
   display: flex;
   justify-content: flex-end;
   color: #fff;
   align-items: center;
   height: 64px;
 }
-.container-body {
+.sidenav-container-body {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -76,7 +76,7 @@ button.mat-menu-item {
   justify-content: center;
   font-size: 32px;
 }
-.container-image {
+.sidenav-container-image {
   background-image: url("../../assets/images/avatar.png");
   background-size: cover;
   background-position: center;
@@ -86,7 +86,7 @@ button.mat-menu-item {
   flex-shrink: 0;
   object-fit: cover;
 }
-.container-button {
+.sidenav-container-button {
   margin-top: 8px;
   width: 144px;
   background-color: rgb(82, 200, 0);
@@ -104,7 +104,7 @@ button.mat-menu-item {
   text-underline-offset: 0.2em;
   color: rgb(82, 200, 0);
 }
-.navigation-item {
+.sidenav-navigation-item {
   font-size: 24px;
   font-weight: 300;
 }

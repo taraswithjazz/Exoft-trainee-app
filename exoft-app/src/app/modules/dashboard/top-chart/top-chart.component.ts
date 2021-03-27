@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-top-chart',
   templateUrl: './top-chart.component.html',
-  styleUrls: ['./top-chart.component.css']
+  styleUrls: ['./top-chart.component.css'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TopChartComponent implements OnInit{
 
@@ -15,22 +16,22 @@ export class TopChartComponent implements OnInit{
     {color: 'rgb(0,10,24)', xp: 0, name:'Allison', surname:'', size:'',avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg'},
  ]
 
- public Total=0;
- public MaxWidth= 160;
+ public total=0;
+ public maxWidth= 160;
 
  constructor() { }
 
  ngOnInit(): void {
-   this.MontarGrafico();
+   this.ShowGraph();
  }
 
- MontarGrafico(){
+ShowGraph(){
    this.users.forEach(element => {
-     this.Total += element.xp;
+     this.total += element.xp;
    });
 
    this.users.forEach(element => {
-     element.size = Math.round((element.xp*this.MaxWidth)/this.Total) + '%';
+     element.size = Math.round((element.xp*this.maxWidth)/this.total) + '%';
    });
  }
 }

@@ -9,10 +9,11 @@ mat-grid-tile {
   height: 100%;
   background-color: rgb(82, 200, 0);
 }
-.greetings .mat-figure {
-  background-color: rgb(82, 200, 0);
-}
 .thanks {
+  width: 100%;
+  height: 100%;
+}
+.personal-acievements {
   width: 100%;
   height: 100%;
 }

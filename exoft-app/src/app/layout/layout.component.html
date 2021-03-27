@@ -1,6 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav mode="over" [(opened)]="opened" opened>
-    <div class="container-header">
+    <div class="sidenav-container-header">
       <h5>GMFCTN!</h5>
       <button
         class="nav-toggle-button"
@@ -10,12 +10,14 @@
         <mat-icon>menu</mat-icon>
       </button>
     </div>
-    <div class="container-body">
-      <div mat-card-avatar class="container-image"></div>
+    <div class="sidenav-container-body">
+      <div mat-card-avatar class="sidenav-container-image"></div>
       <h3>Taras Chervinka</h3>
-      <a mat-raised-button class="container-button"> Edit profile</a>
-      <a mat-raised-button class="container-button"> Change password </a>
-      <a mat-raised-button class="container-button"> Logout </a>
+      <a mat-raised-button class="sidenav-container-button"> Edit profile</a>
+      <a mat-raised-button class="sidenav-container-button">
+        Change password
+      </a>
+      <a mat-raised-button class="sidenav-container-button"> Logout </a>
       <div class="total">
         <a class="achievements">Total:</a>
         <span>4 Badges</span>
@@ -26,7 +28,7 @@
       </div>
       <a
         mat-button
-        class="navigation-item"
+        class="sidenav-navigation-item"
         routerLink="dashboard"
         routerLinkActive="container-active"
       >
@@ -34,13 +36,18 @@
       </a>
       <a
         mat-button
-        class="navigation-item"
+        class="sidenav-navigation-item"
         routerLink="badges"
         routerLinkActive="container-active"
       >
         Badges
       </a>
-      <a mat-button class="navigation-item" routerLink="" routerLinkActive="">
+      <a
+        mat-button
+        class="sidenav-navigation-item"
+        routerLink=""
+        routerLinkActive=""
+      >
         Order
       </a>
     </div>
@@ -48,12 +55,7 @@
   <mat-sidenav-content>
     <mat-toolbar>
       <div class="menu">
-        <button
-          mat-icon-button
-          class="example-icon"
-          aria-label="Example icon-button with menu icon"
-          (click)="sidenav.toggle()"
-        >
+        <button mat-icon-button (click)="sidenav.toggle()">
           <mat-icon>menu</mat-icon>
         </button>
         <h3>GMFCTN!</h3>
@@ -77,7 +79,6 @@
         <button
           mat-icon-button
           class="logout-icon"
-          aria-label="Example icon-button with menu icon"
           [matMenuTriggerFor]="beforeMenu"
         >
           <mat-menu
