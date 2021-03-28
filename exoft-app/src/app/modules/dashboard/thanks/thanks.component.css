@@ -1,25 +1,24 @@
 .thanks-container {
   padding: 10px;
-  color: #fff;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.star-image {
-  width: 150px;
-  height: 150px;
-}
+
 .thanks-header {
   width: 100%;
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 }
+
 .title {
   font-size: 14px;
   margin: 0;
   font-weight: bold;
 }
+
 .thanks-body {
   width: 100%;
   padding-top: 24px;
@@ -28,11 +27,24 @@
   justify-content: center;
   align-items: center;
 }
+
+.star-image {
+  width: 150px;
+  height: 150px;
+}
+
 .description {
   font-size: 14px;
-  color: #fff;
+  color: var(--text-color);
 }
-.header-image {
+
+.thanks-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-image {
   background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
   background-position: center;
@@ -42,12 +54,8 @@
   flex-shrink: 0;
   object-fit: cover;
 }
-.thanks-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 .username {
   margin-left: 5px;
-  color: rgb(82, 200, 0);
+  color: var(--primary-color);
 }

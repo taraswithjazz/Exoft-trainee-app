@@ -6,6 +6,7 @@
         class="nav-toggle-button"
         mat-icon-button
         (click)="sidenav.toggle()"
+        [disableRipple]="true"
       >
         <mat-icon>menu</mat-icon>
       </button>
@@ -75,7 +76,7 @@
       </div>
       <div class="menu">
         <div mat-card-avatar class="header-image"></div>
-        <h5>Taras Chervinka</h5>
+        <span class="username">Taras Chervinka</span>
         <button
           mat-icon-button
           class="logout-icon"

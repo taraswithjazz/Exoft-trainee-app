@@ -1,36 +1,56 @@
-.header-button {
-  width: 40px;
-  height: 30px;
-  background-color: rgb(85, 201, 0);
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0;
-  box-shadow: none;
-}
-.title {
-  font-size: 14px;
-  font-weight: bold;
-}
 .personal-achievements-container {
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: space-between;
-  color: #fff;
+  color: var(--text-color);
 }
+
 .personal-achievements-header {
   display: flex;
   justify-content: space-between;
 }
+
+.title {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.header-button {
+  width: 40px;
+  height: 30px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.achievement-granted {
+  font-size: 12px;
+}
+
+.monet {
+  background: gold;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+
+.achiemenet-exp {
+  color: gold;
+}
+
 .personal-achievements-container .mat-list-item {
   font-size: 14px;
-  color: #fff;
+  color: var(--text-color);
   height: 60px;
   display: flex;
 }
+
 .personal-achievements-container
   .mat-list-base
   .mat-list-item
@@ -40,6 +60,7 @@
   height: 42px;
   width: 100%;
 }
+
 .personal-achievements-container
   .mat-list-base
   .mat-list-item.mat-list-item-with-avatar,
@@ -48,24 +69,18 @@
   display: flex;
   align-items: center;
 }
+
 .mat-list-base .mat-list-item.mat-2-line,
 .mat-list-base .mat-list-option.mat-2-line {
   height: 60px;
   display: flex;
   align-items: center;
 }
-.achievement-granted {
-  font-size: 12px;
-}
-.monet {
-  background: gold;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-}
+
 .mat-list-base {
   padding-top: 16px;
 }
+
 .personal-achievements-container
   .mat-list-base
   .mat-list-item
@@ -73,7 +88,4 @@
   > * {
   display: flex;
   flex-direction: column;
-}
-.achiemenet-exp {
-  color: gold;
 }

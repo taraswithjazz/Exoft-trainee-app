@@ -20,7 +20,16 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [DashboardComponent, GreetingsComponent, ExoftAchievementsComponent, PersonalAchievementsComponent, ThanksComponent, TopChartComponent, BadgesComponent, ChallengesComponent],
+  declarations: [
+    DashboardComponent,
+    GreetingsComponent,
+    ExoftAchievementsComponent,
+    PersonalAchievementsComponent,
+    ThanksComponent,
+    TopChartComponent,
+    BadgesComponent,
+    ChallengesComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),

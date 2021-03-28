@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatTabsModule} from '@angular/material/tabs'
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {MatTabsModule} from '@angular/material/tabs'
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -10,7 +10,7 @@ import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatMenuModule} from '@angular/material/menu'
 import {MatGridListModule} from '@angular/material/grid-list'
 import {MatListModule} from '@angular/material/list'
-import {    MatTableModule} from '@angular/material/table'
+import {MatTableModule} from '@angular/material/table'
 
 
 @NgModule({

@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'badges',
     loadChildren: () => import('./modules/badges/badges/badges.module').then(module => module.BadgesModule)
-  }
+  },
+  { path: '**', redirectTo: 'dashboard' }
 ]
 
 @NgModule({

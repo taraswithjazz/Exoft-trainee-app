@@ -2,18 +2,18 @@ mat-grid-list {
   margin: 10px;
 }
 mat-grid-tile {
-  background-color: rgb(65, 71, 81);
+  background-color: var(--background-color);
 }
 .greetings {
   width: 100%;
   height: 100%;
-  background-color: rgb(82, 200, 0);
+  background-color: var(--primary-color);
 }
-.thanks {
+.personal-acievements {
   width: 100%;
   height: 100%;
 }
-.personal-acievements {
+.thanks {
   width: 100%;
   height: 100%;
 }
