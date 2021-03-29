@@ -23,17 +23,17 @@ namespace TraineeAppBackend.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Achievement> GetAllAchievements()
+        public ActionResult<IEnumerable<Achievement>> GetAllAchievements()
         {
-            var Achievements = _repository.GetAllAchievements();
-            return Achievements;
+            var achievements = _repository.GetAllAchievements();
+            return Ok(achievements);
         }
 
         [HttpGet("{id}")]
-        public Achievement GetAchievementById(int id)
+        public ActionResult<Achievement> GetAchievementById(int id)
         {
-            var Achievement = _repository.GetAchievementById(id);
-            return Achievement;
+            var achievement = _repository.GetAchievementById(id);
+            return Ok(achievement);
         }
     }
 }
