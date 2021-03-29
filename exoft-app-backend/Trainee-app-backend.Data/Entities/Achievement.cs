@@ -1,5 +1,6 @@
 ﻿using System;
-namespace TraineeAppBackend.Models
+
+namespace TraineeAppBackend.Data.Entities
 {
     public class Achievement : BaseEntity
     {

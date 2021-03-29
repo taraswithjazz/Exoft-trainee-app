@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TraineeAppBackend.Interfaces;
-using TraineeAppBackend.Models;
-using TraineeAppBackend.Repositories;
+using TraineeAppBackend.Data.Repositories;
+using TraineeAppBackend.Data.Entities;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 

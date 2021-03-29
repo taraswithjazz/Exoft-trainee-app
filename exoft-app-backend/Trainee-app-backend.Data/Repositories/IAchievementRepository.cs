@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using TraineeAppBackend.Models;
+using TraineeAppBackend.Data.Entities;
 
-namespace TraineeAppBackend.Interfaces
+namespace TraineeAppBackend.Data.Repositories
 {
     public interface IAchievementRepository
     {

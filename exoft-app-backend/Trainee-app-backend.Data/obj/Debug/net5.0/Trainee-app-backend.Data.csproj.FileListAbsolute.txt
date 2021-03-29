@@ -1,0 +1,12 @@
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/bin/Debug/net5.0/Trainee-app-backend.Data.deps.json
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/bin/Debug/net5.0/Trainee-app-backend.Data.dll
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/bin/Debug/net5.0/ref/Trainee-app-backend.Data.dll
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/bin/Debug/net5.0/Trainee-app-backend.Data.pdb
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/Trainee-app-backend.Data.csprojAssemblyReference.cache
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/Trainee-app-backend.Data.GeneratedMSBuildEditorConfig.editorconfig
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/Trainee-app-backend.Data.AssemblyInfoInputs.cache
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/Trainee-app-backend.Data.AssemblyInfo.cs
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/Trainee-app-backend.Data.csproj.CoreCompileInputs.cache
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/Trainee-app-backend.Data.dll
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/ref/Trainee-app-backend.Data.dll
+/Users/taraschervinka/Documents/GitHub/Exoft-trainee-app/exoft-app-backend/Trainee-app-backend.Data/obj/Debug/net5.0/Trainee-app-backend.Data.pdb
