@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Trainee_app_backend.Interfaces;
-using Trainee_app_backend.Models;
+using TraineeAppBackend.Interfaces;
+using TraineeAppBackend.Models;
 
-namespace Trainee_app_backend.Repositories
+namespace TraineeAppBackend.Repositories
 {
         public class AchievementRepository : IAchievementRepository
         {

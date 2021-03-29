@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace Trainee_app_backend
+namespace TraineeAppBackend
 {
     public class Startup
     {
@@ -32,7 +32,7 @@ namespace Trainee_app_backend
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Trainee_app_backend", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TraineeAppBackend", Version = "v1" });
             });
         }
 
@@ -43,7 +43,7 @@ namespace Trainee_app_backend
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Trainee_app_backend v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TraineeAppBackend v1"));
             }
 
             app.UseHttpsRedirection();

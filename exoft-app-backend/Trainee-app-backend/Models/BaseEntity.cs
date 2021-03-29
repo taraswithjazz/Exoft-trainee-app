@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Trainee_app_backend.Models
+namespace TraineeAppBackend.Models
 {
     public class BaseEntity
     {
