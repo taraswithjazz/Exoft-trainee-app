@@ -1,20 +1,24 @@
 ﻿<Properties StartupConfiguration="{761662AE-E1B7-4195-AE7D-D1A12125817C}|Default">
   <MonoDevelop.Ide.ItemProperties.Trainee-app-backend PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Trainee-app-backend/Controllers/AchievementController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Trainee-app-backend/Repositories/AchievementRepository.cs">
     <Files>
       <File FileName="Trainee-app-backend/Program.cs" Line="1" Column="1" />
-      <File FileName="Trainee-app-backend/Repositories/AchievementRepository.cs" Line="1" Column="1" />
+      <File FileName="Trainee-app-backend/Repositories/AchievementRepository.cs" Line="12" Column="125" />
       <File FileName="Trainee-app-backend/Controllers/AchievementController.cs" Line="1" Column="1" />
+      <File FileName="Trainee-app-backend/Models/BaseEntity.cs" Line="6" Column="21" />
+      <File FileName="Trainee-app-backend/Interfaces/IAchievementRepository.cs" Line="10" Column="52" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Trainee-app-backend" expanded="True">
             <Node name="Trainee-app-backend" expanded="True">
-              <Node name="Controllers" expanded="True">
-                <Node name="AchievementController.cs" selected="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Interfaces" expanded="True" />
+              <Node name="Models" expanded="True" />
+              <Node name="Repositories" expanded="True">
+                <Node name="AchievementRepository.cs" selected="True" />
               </Node>
-              <Node name="Repositories" expanded="True" />
             </Node>
           </Node>
         </State>

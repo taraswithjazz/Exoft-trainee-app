@@ -30,7 +30,7 @@ namespace TraineeAppBackend.Controllers
         }
 
         [HttpGet("{id}")]
-        public ActionResult<Achievement> GetAchievementById(int id)
+        public ActionResult<Achievement> GetAchievementById(Guid id)
         {
             var achievement = _repository.GetAchievementById(id);
             return Ok(achievement);
