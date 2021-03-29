@@ -12,13 +12,15 @@ namespace TraineeAppBackend.Data.Repositories
             new Achievement {
              Name = "Exoft Turbo Power",
              Description = "Granted for coding fast",
-             Xp = 15 ,IconId = 1322,
+             Xp = 15,
+             IconId = 1322,
              Id = new Guid("11111111-1111-1111-1111-111111111111")
             },
             new Achievement {
              Name = "Exoft Turbo Power",
              Description = "Granted for coding fast",
-             Xp = 15 ,IconId = 1322,
+             Xp = 15,
+             IconId = 1322,
              Id = new Guid("11111111-1111-1111-1111-111111111112")
             }
         };

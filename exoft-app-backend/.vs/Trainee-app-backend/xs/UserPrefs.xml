@@ -3,21 +3,13 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Trainee-app-backend.Data/Repositories/AchievementRepository.cs">
     <Files>
       <File FileName="Trainee-app-backend/Program.cs" Line="1" Column="1" />
-      <File FileName="Trainee-app-backend.Data/Repositories/AchievementRepository.cs" Line="22" Column="65" />
+      <File FileName="Trainee-app-backend.Data/Repositories/AchievementRepository.cs" Line="32" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="Trainee-app-backend" expanded="True">
-            <Node name="Trainee-app-backend" expanded="True">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="Controllers" expanded="True" />
-            </Node>
-            <Node name="Trainee-app-backend.Data" expanded="True">
-              <Node name="Entities" expanded="True" />
-              <Node name="Repositories" expanded="True" />
-              <Node name=".gitignore" selected="True" />
-            </Node>
+          <Node name="Trainee-app-backend" expanded="True" selected="True">
+            <Node name="Trainee-app-backend" expanded="True" />
           </Node>
         </State>
       </Pad>
