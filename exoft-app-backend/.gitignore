@@ -1,1 +1,7 @@
-.vs
+/.vs
+
+Trainee-app-backend.Data/obj
+Trainee-app-backend.Data/bin
+
+Trainee-app-backend/obj
+Trainee-app-backend/bin

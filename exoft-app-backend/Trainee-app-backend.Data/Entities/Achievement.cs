@@ -7,6 +7,6 @@ namespace TraineeAppBackend.Data.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public int Xp { get; set; }
-        public int IconId { get; set; }
+        public Guid IconId { get; set; }
     }
 }
