@@ -3,12 +3,15 @@
     <span class="title">PERSONAL ACHIEVEMENTS</span>
     <a mat-raised-button class="header-button">request</a>
   </div>
+
   <mat-list>
     <mat-list-item *ngFor="let achievement of achievements">
       <img matListAvatar src="{{ achievement.avatar }}" alt="..." />
       <div matLine class="achievement-info">
         <span class="achievement-title">{{ achievement.title }}</span>
-        <span class="achievement-granted">{{ achievement.granted }} mins ago</span>
+        <span class="achievement-granted"
+          >{{ achievement.granted }} mins ago</span
+        >
       </div>
       <span class="monet"> </span>
       <span class="achiemenet-exp">&nbsp; + {{ achievement.xp }} xp </span>

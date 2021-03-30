@@ -80,6 +80,13 @@
 .mat-list-base {
   padding-top: 16px;
 }
+.personal-achievements-container
+  .mat-list-base
+  .mat-list-item.mat-list-item-with-avatar
+  .mat-list-item-content
+  .mat-list-text {
+  padding-left: 8px;
+}
 
 .personal-achievements-container
   .mat-list-base

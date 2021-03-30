@@ -6,6 +6,7 @@
   background-color: var(--background-color);
   width: 250px;
 }
+
 .sidenav-container-header {
   display: flex;
   justify-content: flex-end;
@@ -88,6 +89,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .logout-icon .material-icons {
   display: flex;
   justify-content: center;
@@ -113,10 +115,6 @@
 
 .nav-toggle-button .material-icons {
   font-size: 16px;
-}
-
-.logout-menu {
-  background: var(--background-color);
 }
 
 button.mat-menu-item {

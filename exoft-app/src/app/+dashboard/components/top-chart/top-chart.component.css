@@ -21,7 +21,7 @@
 
 .chart-body {
   width: 100%;
-  padding-top: 12px;
+  padding-top: 6px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -62,33 +62,42 @@
   .mat-list-text {
   padding-left: 8px;
 }
+
 .chart-container .mat-list-base .mat-list-item .mat-list-item-content {
   padding: 0;
   height: 40px;
   width: 100%;
   margin: 2px 0;
 }
+.chart-container .mat-list-base {
+  padding-top: 0;
+}
 .chart-container .mat-list-base .mat-list-item.mat-list-item-with-avatar,
 .mat-list-base .mat-list-option.mat-list-item-with-avatar {
   height: 40px;
 }
+
 .chart-container .mat-list-base .mat-list-item.mat-list-item-with-avatar,
 .mat-list-base .mat-list-option.mat-list-item-with-avatar {
   height: 40px;
   color: var(--text-color);
 }
-.mat-list-base .mat-list-item .mat-list-avatar,
+
+.chart-container .mat-list-base .mat-list-item .mat-list-avatar,
 .mat-list-base .mat-list-option .mat-list-avatar {
   width: 30px;
   height: 30px;
 }
+
 .chart-list .mat-list-base .mat-list-item,
 .mat-list-base .mat-list-option {
   height: 40px;
 }
+
 .chart-list .mat-list-base {
-  padding-top: 30px;
+  padding-top: 24px;
 }
+
 .chart-list .mat-list-base .mat-list-item,
 .mat-list-base .mat-list-option {
   display: flex;

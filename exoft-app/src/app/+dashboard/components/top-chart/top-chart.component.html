@@ -2,12 +2,14 @@
   <div class="chart-header">
     <span class="title">TOP CHART</span>
   </div>
+
   <div class="chart-body">
     <div class="user-info">
       <div class="user-info-heads">
         <span>Name</span>
         <span>Total XP</span>
       </div>
+
       <mat-list class="user-list">
         <mat-list-item *ngFor="let user of users">
           <img matListAvatar class="user-image" src="{{ user.avatar }}" />
