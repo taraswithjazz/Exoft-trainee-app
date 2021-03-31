@@ -96,6 +96,7 @@
 
 .chart-list .mat-list-base {
   padding-top: 24px;
+  width: 50%;
 }
 
 .chart-list .mat-list-base .mat-list-item,

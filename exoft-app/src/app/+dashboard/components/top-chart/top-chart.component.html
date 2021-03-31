@@ -12,7 +12,7 @@
 
       <mat-list class="user-list">
         <mat-list-item *ngFor="let user of users">
-          <img matListAvatar class="user-image" src="{{ user.avatar }}" />
+          <img matListAvatar class="user-image" [src]="user.avatar" />
           <div matLine>
             <span class="user-title">{{ user.name }}</span>
             <span>{{ user.surname }}</span>
@@ -21,7 +21,7 @@
         </mat-list-item>
       </mat-list>
     </div>
-    <div class="chart-list" style="width: 50%">
+    <div class="chart-list">
       <mat-list>
         <mat-list-item *ngFor="let user of users">
           <div
