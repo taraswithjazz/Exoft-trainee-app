@@ -6,18 +6,112 @@
   display: none;
 }
 
-.mat-list-base .mat-list-item .mat-list-item-content {
-  padding: 0;
-  height: 40px;
-  width: 100%;
-  margin: 2px 0;
+/* top-chart components css */
+.chart-container .user-info .mat-list-base .mat-list-item .mat-line {
+  display: flex;
+  flex-direction: column;
 }
-.mat-list-base
+
+.chart-container
+  .mat-list-base
   .mat-list-item.mat-list-item-with-avatar
   .mat-list-item-content
   .mat-list-text {
   padding-left: 8px;
 }
-.mat-list-item-content {
-  padding: 0 0;
+
+.chart-container .mat-list-base .mat-list-item .mat-list-item-content {
+  padding: 0;
+  height: 40px;
+  width: 100%;
+  margin: 2px 0;
+}
+.chart-container .mat-list-base {
+  padding-top: 0;
+}
+.chart-container .mat-list-base .mat-list-item.mat-list-item-with-avatar,
+.mat-list-base .mat-list-option.mat-list-item-with-avatar {
+  height: 40px;
+}
+
+.chart-container .mat-list-base .mat-list-item.mat-list-item-with-avatar,
+.mat-list-base .mat-list-option.mat-list-item-with-avatar {
+  height: 40px;
+  color: var(--text-color);
+}
+
+.chart-container .mat-list-base .mat-list-item .mat-list-avatar,
+.mat-list-base .mat-list-option .mat-list-avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.chart-list .mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  height: 40px;
+}
+
+.chart-list {
+  padding-top: 26px;
+  width: 50%;
+}
+
+.chart-list .mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+  display: flex;
+  align-items: center;
+}
+
+/* personal-achievement component */
+.personal-achievements-container .mat-list-item {
+  font-size: 14px;
+  color: var(--text-color);
+  height: 60px;
+  display: flex;
+}
+
+.personal-achievements-container
+  .mat-list-base
+  .mat-list-item
+  .mat-list-item-content,
+.mat-list-base .mat-list-option .mat-list-item-content {
+  padding: 0;
+  height: 42px;
+  width: 100%;
+}
+
+.personal-achievements-container
+  .mat-list-base
+  .mat-list-item.mat-list-item-with-avatar,
+.mat-list-base .mat-list-option.mat-list-item-with-avatar {
+  height: 56px;
+  display: flex;
+  align-items: center;
+}
+
+.personal-achievements-container .mat-list-base .mat-list-item.mat-2-line,
+.mat-list-base .mat-list-option.mat-2-line {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.personal-achievements-container .mat-list-base {
+  padding-top: 6px;
+}
+.personal-achievements-container
+  .mat-list-base
+  .mat-list-item.mat-list-item-with-avatar
+  .mat-list-item-content
+  .mat-list-text {
+  padding-left: 8px;
+}
+
+.personal-achievements-container
+  .mat-list-base
+  .mat-list-item
+  .mat-list-text
+  > * {
+  display: flex;
+  flex-direction: column;
 }

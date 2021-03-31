@@ -3,8 +3,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-personal-achievements',
   templateUrl: './personal-achievements.component.html',
-  styleUrls: ['./personal-achievements.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./personal-achievements.component.css']
 })
 export class PersonalAchievementsComponent {
   achievements = [

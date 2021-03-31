@@ -1,5 +1,5 @@
 .personal-achievements-container {
-  padding: 10px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,57 +42,4 @@
 
 .achiemenet-exp {
   color: gold;
-}
-
-.personal-achievements-container .mat-list-item {
-  font-size: 14px;
-  color: var(--text-color);
-  height: 60px;
-  display: flex;
-}
-
-.personal-achievements-container
-  .mat-list-base
-  .mat-list-item
-  .mat-list-item-content,
-.mat-list-base .mat-list-option .mat-list-item-content {
-  padding: 0;
-  height: 42px;
-  width: 100%;
-}
-
-.personal-achievements-container
-  .mat-list-base
-  .mat-list-item.mat-list-item-with-avatar,
-.mat-list-base .mat-list-option.mat-list-item-with-avatar {
-  height: 56px;
-  display: flex;
-  align-items: center;
-}
-
-.mat-list-base .mat-list-item.mat-2-line,
-.mat-list-base .mat-list-option.mat-2-line {
-  height: 60px;
-  display: flex;
-  align-items: center;
-}
-
-.mat-list-base {
-  padding-top: 16px;
-}
-.personal-achievements-container
-  .mat-list-base
-  .mat-list-item.mat-list-item-with-avatar
-  .mat-list-item-content
-  .mat-list-text {
-  padding-left: 8px;
-}
-
-.personal-achievements-container
-  .mat-list-base
-  .mat-list-item
-  .mat-list-text
-  > * {
-  display: flex;
-  flex-direction: column;
 }
