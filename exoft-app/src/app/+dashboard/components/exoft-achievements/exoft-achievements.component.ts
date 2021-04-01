@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./exoft-achievements.component.css']
 })
 export class ExoftAchievementsComponent {
-
 }

@@ -1,0 +1,104 @@
+.challenges-container {
+  padding: 15px;
+  color: var(--text-color);
+}
+
+.challenges-header {
+  font-size: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.header-button {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.challenges-body {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 220px;
+  overflow-y: scroll;
+}
+.events {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 4px;
+  border-left: 2px solid grey;
+  padding: 10px 0 10px 10px;
+}
+.available-events {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.finished-events {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.availability {
+  color: var(--primary-color);
+  margin-left: 4px;
+  border-left: 2px solid grey;
+  padding-left: 14px;
+  font-size: 18px;
+}
+.available-events::before {
+  content: "";
+  white-space: pre;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  position: absolute;
+}
+.finished-events::before {
+  content: "";
+  white-space: pre;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  position: absolute;
+}
+
+.event-avatar {
+  width: 100px;
+  height: 100px;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+.ng-star-inserted {
+  height: 100px;
+  margin: 4px;
+}

@@ -12,7 +12,7 @@ export class TopChartComponent implements OnInit {
     { color: 'rgb(172,0,207)', xp: 12, name: 'Bobby', surname: 'Firmino', size: '', avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg' },
     { color: 'rgb(236,146,0)', xp: 23, name: 'Mo', surname: 'Salah', size: '', avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg' },
     { color: 'rgb(0,241,236)', xp: 153, name: 'Ginni', surname: 'Wijnaldum', size: '', avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg' },
-    { color: 'rgb(0,10,24)', xp: 0, name: 'Virgil', surname: 'Van Dijk', size: '', avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg' },
+    { color: 'rgb(0,10,24)', xp: 2, name: 'Virgil', surname: 'Van Dijk', size: '', avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg' },
   ];
 
   total = 0;
