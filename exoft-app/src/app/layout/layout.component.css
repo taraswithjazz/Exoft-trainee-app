@@ -24,7 +24,7 @@
 }
 
 .sidenav-container-image {
-  background-image: url("../../assets/images/avatar.png");
+  background-image: url("/assets/images/avatar.png");
   background-size: cover;
   background-position: center;
   height: 150px;

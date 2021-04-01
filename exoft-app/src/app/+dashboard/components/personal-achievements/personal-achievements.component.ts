@@ -17,7 +17,7 @@ export class PersonalAchievementsComponent {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    this.dialog.open(RequestAchievementComponent);
+    this.dialog.open(RequestAchievementComponent, { panelClass: 'request-dialog-container' });
 
   }
 }
