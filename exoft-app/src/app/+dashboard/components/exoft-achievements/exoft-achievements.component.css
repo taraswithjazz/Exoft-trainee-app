@@ -2,3 +2,68 @@
   padding: 15px;
   color: var(--text-color);
 }
+.challenges-body {
+  padding-top: 30px;
+  overflow-y: scroll;
+  height: 662px;
+  position: relative;
+}
+.title {
+  font-size: 14px;
+  font-weight: bold;
+}
+.challenge-item-header {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-left: 4px;
+  padding-left: 10px;
+  border-left: 2px solid grey;
+}
+.challenge-item-body {
+  padding-top: 10px;
+  margin-left: 4px;
+  border-left: 2px solid grey;
+}
+.challenge-item::before {
+  content: "";
+  white-space: pre;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  position: absolute;
+}
+.achivement-info {
+  padding: 0 0 0px 6px;
+}
+.records-button {
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.records {
+  height: 24px;
+  background-color: lightskyblue;
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+  width: 30%;
+  margin-left: 10px;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: grey;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}

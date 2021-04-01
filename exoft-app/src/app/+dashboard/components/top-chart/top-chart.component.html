@@ -12,7 +12,12 @@
 
       <mat-list class="user-list">
         <mat-list-item *ngFor="let user of users">
-          <img matListAvatar class="user-image" [src]="user.avatar" />
+          <img
+            matListAvatar
+            class="user-image"
+            [src]="user.avatar"
+            (click)="openDialog()"
+          />
           <div matLine>
             <span class="user-title">{{ user.name }}</span>
             <span>{{ user.surname }}</span>

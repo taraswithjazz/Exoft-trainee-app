@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UserAchievementsComponent } from 'src/app/shared/dialogs/user-achievements/user-achievements.component';
 
 @Component({
   selector: 'app-top-chart',
@@ -18,10 +20,11 @@ export class TopChartComponent implements OnInit {
   total = 0;
   maxWidth = 160;
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
-  ngOnInit(): void {
-    this.showGraph();
+  openDialog(): void {
+    this.dialog.open(UserAchievementsComponent);
+
   }
 
   showGraph(): void {
@@ -33,4 +36,9 @@ export class TopChartComponent implements OnInit {
       element.size = Math.round((element.xp * this.maxWidth) / this.total) + '%';
     });
   }
+
+  ngOnInit(): void {
+    this.showGraph();
+  }
+
 }
