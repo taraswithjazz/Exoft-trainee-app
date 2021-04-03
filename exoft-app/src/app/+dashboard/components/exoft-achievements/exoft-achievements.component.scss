@@ -1,0 +1,98 @@
+.achievements-container {
+  padding: 15px;
+  color: var(--text-color);
+
+  .title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .xp-count {
+    margin-left: 10px;
+    background-color: var(--primary-color);
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: var(--text-color);
+  }
+
+  .achievements-body {
+    padding-top: 30px;
+    overflow-y: auto;
+    height: 662px;
+    position: relative;
+
+    .achievements-item::before {
+      content: "";
+      white-space: pre;
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 50%;
+      background-image: url("/assets/images/avatar.png");
+      background-size: cover;
+      background-position: center;
+      border: var(--primary-color) 1px solid;
+      position: absolute;
+    }
+
+    .achievements-item-header {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-left: 12px;
+      padding: 6px 0 0 20px;
+      border-left: 2px solid grey;
+
+      .username {
+        color: var(--primary-color);
+      }
+      .time {
+        font-size: 12px;
+      }
+    }
+
+    .achievements-item-body {
+      padding-top: 10px;
+      margin-left: 12px;
+      border-left: 2px solid grey;
+
+      .achivement-info {
+        padding: 0 0 0px 6px;
+      }
+
+      .records-button {
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+        .records {
+          height: 24px;
+          background-color: lightskyblue;
+          color: var(--text-color);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          text-align: center;
+          width: 30%;
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: grey;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+  }
+}

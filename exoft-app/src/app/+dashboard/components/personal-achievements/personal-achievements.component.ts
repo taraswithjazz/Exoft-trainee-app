@@ -5,7 +5,7 @@ import { RequestAchievementComponent } from 'src/app/shared/dialogs/request-achi
 @Component({
   selector: 'app-personal-achievements',
   templateUrl: './personal-achievements.component.html',
-  styleUrls: ['./personal-achievements.component.css']
+  styleUrls: ['./personal-achievements.component.scss']
 })
 export class PersonalAchievementsComponent {
   public achievements = [

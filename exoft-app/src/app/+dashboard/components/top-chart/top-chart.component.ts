@@ -5,7 +5,7 @@ import { UserAchievementsComponent } from 'src/app/shared/dialogs/user-achieveme
 @Component({
   selector: 'app-top-chart',
   templateUrl: './top-chart.component.html',
-  styleUrls: ['./top-chart.component.css']
+  styleUrls: ['./top-chart.component.scss']
 })
 export class TopChartComponent implements OnInit {
 
@@ -23,7 +23,7 @@ export class TopChartComponent implements OnInit {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    this.dialog.open(UserAchievementsComponent);
+    this.dialog.open(UserAchievementsComponent, { panelClass: 'user-dialog-container' });
 
   }
 

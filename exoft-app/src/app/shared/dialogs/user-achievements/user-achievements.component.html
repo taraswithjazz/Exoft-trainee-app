@@ -1,2 +1,33 @@
-<p>user-achievements works!</p>
-<button (click)="openDialog()">SAY THANKS</button>
+<div class="user-container">
+  <div class="user-header">
+    <mat-icon [mat-dialog-close]="true" class="cancel-button">close</mat-icon>
+  </div>
+
+  <div class="user-body">
+    <div class="user-info">
+      <div class="user-image"></div>
+      <span class="username">Taras Chervinka</span>
+      <div>
+        <a class="exp">EXP:</a>
+        <span class="exp-count">70 XP</span>
+      </div>
+    </div>
+
+    <div class="user-achievements">
+      <div
+        class="achievement-item"
+        *ngFor="let achievement of achievements"
+        [attr.count]="achievement.count"
+      >
+        <img class="achievement-image" [src]="achievement.avatar" alt="..." />
+        <span class="achievement-name">{{ achievement.title }}</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="user-footer">
+    <a mat-raised-button class="thanks-button" (click)="openDialog()"
+      >SAY THANKS</a
+    >
+  </div>
+</div>

@@ -1,1 +1,16 @@
-<p>say-thanks works!</p>
+<div class="thanks-container">
+  <div class="thanks-header">
+    <mat-icon [mat-dialog-close]="true" class="cancel-button">close</mat-icon>
+  </div>
+
+  <div class="thanks-body">
+    <span class="text">Leave the comment</span>
+    <mat-form-field class="message">
+      <input matInput autocomplete="off" />
+    </mat-form-field>
+  </div>
+
+  <div class="thanks-footer">
+    <a mat-raised-button class="thanks-button" disabled>THANKS!</a>
+  </div>
+</div>

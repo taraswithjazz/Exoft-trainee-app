@@ -1,5 +1,6 @@
 .mat-menu-panel {
   background: var(--background-color);
+  color: var(--text-color);
 }
 
 .mat-button-focus-overlay {
@@ -140,10 +141,6 @@
 .achievement-modal-container .mat-input-element {
   caret-color: var(--text-color);
 }
-.achievement-modal-container
-  .mat-raised-button.mat-button-disabled.mat-button-disabled {
-  background-color: var(--primary-color);
-}
 
 .mat-select-panel {
   background-color: var(--background-color);
@@ -153,4 +150,30 @@
 }
 .mat-select-value {
   color: var(--text-color);
+}
+
+/* User profile dialog  */
+.user-dialog-container .mat-dialog-container {
+  background-color: var(--background-color);
+  padding: 0;
+  border-radius: 15px;
+}
+
+// Say thanks dialog
+
+.thanks-dialog-container .mat-dialog-container {
+  background-color: var(--background-color);
+  padding: 0;
+  border-radius: 15px;
+  width: 350px;
+}
+
+.thanks-container .mat-form-field-underline {
+  background-color: var(--text-color);
+}
+.thanks-container .mat-form-field-underline .mat-form-field-ripple {
+  background-color: var(--text-color);
+}
+.thanks-container .mat-input-element {
+  caret-color: var(--text-color);
 }

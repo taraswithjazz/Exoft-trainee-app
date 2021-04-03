@@ -5,13 +5,13 @@ import { UserAchievementsComponent } from 'src/app/shared/dialogs/user-achieveme
 @Component({
   selector: 'app-thanks',
   templateUrl: './thanks.component.html',
-  styleUrls: ['./thanks.component.css']
+  styleUrls: ['./thanks.component.scss']
 })
 export class ThanksComponent {
   constructor(public dialog: MatDialog) { }
 
   openDialog(): void {
-    this.dialog.open(UserAchievementsComponent);
+    this.dialog.open(UserAchievementsComponent, { panelClass: 'user-dialog-container' });
 
   }
 }

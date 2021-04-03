@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-exoft-achievements',
   templateUrl: './exoft-achievements.component.html',
-  styleUrls: ['./exoft-achievements.component.css']
+  styleUrls: ['./exoft-achievements.component.scss']
 })
 export class ExoftAchievementsComponent {
   public achievements = [
