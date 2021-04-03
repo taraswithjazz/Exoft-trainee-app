@@ -1,38 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Trainee_app_backend.Data;
 using TraineeAppBackend.Data.Entities;
 
 namespace TraineeAppBackend.Data.Repositories
 {
     public class AchievementRepository : IAchievementRepository
     {
-
-        public List<Achievement> achievements = new List<Achievement>(){
-            new Achievement {
-             Name = "Exoft Turbo Power",
-             Description = "Granted for coding fast",
-             Xp = 15,
-             IconId = new Guid("11111111-1111-1111-1111-111111111113"),
-             Id = new Guid("11111111-1111-1111-1111-111111111111")
-            },
-            new Achievement {
-             Name = "Exoft Turbo Power",
-             Description = "Granted for coding fast",
-             Xp = 15,
-             IconId = new Guid("11111111-1111-1111-1111-111111111114"),
-             Id = new Guid("11111111-1111-1111-1111-111111111112")
-            }
-        };
+        private readonly gmfctnContext _context;
+        public AchievementRepository(gmfctnContext context)
+        {
+            _context = context;
+        }
 
         public IEnumerable<Achievement> GetAllAchievements()
         {
-            return achievements;
+            return _context.Achievements;
         }
 
         public Achievement GetAchievementById(Guid id)
         {
-            return achievements.FirstOrDefault(e => e.Id == id);
+            return _context.Achievements.FirstOrDefault(e => e.Id == id);
         }
     }
 }

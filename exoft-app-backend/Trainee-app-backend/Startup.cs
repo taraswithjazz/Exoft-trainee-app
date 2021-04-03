@@ -6,11 +6,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Trainee_app_backend.Data;
+using TraineeAppBackend.Data.Repositories;
 
 namespace TraineeAppBackend
 {
@@ -34,6 +37,11 @@ namespace TraineeAppBackend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TraineeAppBackend", Version = "v1" });
             });
+
+            services.AddScoped<IAchievementRepository, AchievementRepository>();
+
+            services.AddDbContext<gmfctnContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection"), x => x.MigrationsAssembly("Trainee-app-backend")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

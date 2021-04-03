@@ -16,9 +16,9 @@ namespace TraineeAppBackend.Controllers
     {
         private IAchievementRepository _repository;
 
-        public AchievementController()
+        public AchievementController(IAchievementRepository repository)
         {
-            _repository = new AchievementRepository();
+            _repository = repository;
         }
 
         [HttpGet]
