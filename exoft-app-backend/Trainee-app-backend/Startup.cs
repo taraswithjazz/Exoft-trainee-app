@@ -40,7 +40,7 @@ namespace TraineeAppBackend
 
             services.AddScoped<IAchievementRepository, AchievementRepository>();
 
-            services.AddDbContext<gmfctnContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection"), x => x.MigrationsAssembly("Trainee-app-backend")));
+            services.AddDbContext<GmfctnContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection"), x => x.MigrationsAssembly("Trainee-app-backend")));
 
         }
 

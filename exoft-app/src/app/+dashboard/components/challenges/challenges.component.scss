@@ -37,6 +37,7 @@
 @mixin avatar {
   width: 100px;
   height: 100px;
+  margin: 4px;
 }
 
 .challenges-container {
@@ -123,10 +124,5 @@
 
   ::-webkit-scrollbar-thumb {
     background: var(--primary-color);
-  }
-
-  .ng-star-inserted {
-    height: 100px;
-    margin: 4px;
   }
 }

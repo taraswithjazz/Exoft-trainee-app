@@ -1,9 +1,10 @@
 <div class="personal-achievements-container">
   <div class="personal-achievements-header">
     <span class="title">PERSONAL ACHIEVEMENTS</span>
-    <a mat-raised-button class="header-button" (click)="openDialog()"
-      >Request</a
-    >
+
+    <a mat-raised-button class="header-button" (click)="openDialog()">
+      Request
+    </a>
   </div>
 
   <mat-list>
@@ -11,11 +12,13 @@
       <img matListAvatar [src]="achievement.avatar" alt="..." />
       <div matLine class="achievement-info">
         <span class="achievement-title">{{ achievement.title }}</span>
+
         <span class="achievement-granted"
-          >{{ achievement.granted }} mins ago</span
-        >
+          >{{ achievement.granted }} mins ago
+        </span>
       </div>
       <span class="monet"> </span>
+
       <span class="achiemenet-exp">&nbsp; + {{ achievement.xp }} xp </span>
     </mat-list-item>
   </mat-list>

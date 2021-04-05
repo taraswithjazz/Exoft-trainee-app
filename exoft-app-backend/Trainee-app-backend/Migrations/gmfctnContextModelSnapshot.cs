@@ -8,7 +8,7 @@ using Trainee_app_backend.Data;
 
 namespace Trainee_app_backend.Migrations
 {
-    [DbContext(typeof(gmfctnContext))]
+    [DbContext(typeof(GmfctnContext))]
     partial class gmfctnContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

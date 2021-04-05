@@ -8,8 +8,8 @@ namespace TraineeAppBackend.Data.Repositories
 {
     public class AchievementRepository : IAchievementRepository
     {
-        private readonly gmfctnContext _context;
-        public AchievementRepository(gmfctnContext context)
+        private readonly GmfctnContext _context;
+        public AchievementRepository(GmfctnContext context)
         {
             _context = context;
         }

@@ -9,9 +9,9 @@ using Trainee_app_backend.Data;
 
 namespace Trainee_app_backend.Migrations
 {
-    [DbContext(typeof(gmfctnContext))]
+    [DbContext(typeof(GmfctnContext))]
     [Migration("20210403104939_Achievements")]
-    partial class Achievements
+    partial class AddAchievements
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

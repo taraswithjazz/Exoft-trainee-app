@@ -14,10 +14,9 @@ export class PersonalAchievementsComponent {
     { avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg', title: 'Exoft Skylark Power', xp: 20, granted: 10 },
     { avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg', title: 'Exoft Corpo Power', xp: 25, granted: 23 },
   ];
-  constructor(public dialog: MatDialog) { }
+  constructor(private readonly dialog: MatDialog) { }
 
   openDialog(): void {
     this.dialog.open(RequestAchievementComponent, { panelClass: 'request-dialog-container' });
-
   }
 }
