@@ -20,11 +20,10 @@ export class TopChartComponent implements OnInit {
   total = 0;
   maxWidth = 160;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private readonly dialog: MatDialog) { }
 
   openDialog(): void {
     this.dialog.open(UserAchievementsComponent, { panelClass: 'user-dialog-container' });
-
   }
 
   showGraph(): void {

@@ -6,5 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./say-thanks.component.scss']
 })
 export class SayThanksComponent {
-
 }

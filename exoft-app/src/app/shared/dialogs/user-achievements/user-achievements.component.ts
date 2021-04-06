@@ -20,7 +20,7 @@ export class UserAchievementsComponent {
     { avatar: 'https://material.angular.io/assets/img/examples/shiba1.jpg', title: 'Exoft Skylark Power', xp: 20, granted: 10, count: 2 }
   ];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private readonly dialog: MatDialog) { }
 
   openDialog(): void {
     this.dialog.open(SayThanksComponent, { panelClass: 'thanks-dialog-container', autoFocus: false });

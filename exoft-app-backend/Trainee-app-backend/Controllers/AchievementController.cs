@@ -34,5 +34,40 @@ namespace TraineeAppBackend.Controllers
             var achievement = _repository.GetAchievementById(id);
             return Ok(achievement);
         }
+        [HttpPost]
+        public IActionResult CreateAchievement(Achievement achievement)
+        {
+            try
+            {
+                _repository.CreateAchievement(achievement);
+                return Ok(_repository.GetAllAchievements());
+            }
+            catch (Exception exc)
+            {
+                throw new Exception(exc.Message);
+            }
+        }
+
+        [HttpPost("edit")]
+        public IActionResult UpdateAchievement(Guid id, Achievement achievement)
+        {
+            try
+            {
+                _repository.UpdateAchievement(id, achievement);
+                return Ok(_repository.GetAllAchievements());
+            }
+            catch (Exception exc)
+            {
+                throw new Exception(exc.Message);
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult DeleteAchievement(Guid id)
+        {
+            _repository.DeleteAchievement(id);
+             return Ok(_repository.GetAllAchievements());
+            
+        }
     }
 }

@@ -8,10 +8,9 @@ import { UserAchievementsComponent } from 'src/app/shared/dialogs/user-achieveme
   styleUrls: ['./thanks.component.scss']
 })
 export class ThanksComponent {
-  constructor(public dialog: MatDialog) { }
+  constructor(private readonly dialog: MatDialog) { }
 
   openDialog(): void {
     this.dialog.open(UserAchievementsComponent, { panelClass: 'user-dialog-container' });
-
   }
 }

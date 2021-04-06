@@ -20,5 +20,4 @@ export class GreetingsComponent {
             return 'Good night, ';
         }
     }
-
 }
