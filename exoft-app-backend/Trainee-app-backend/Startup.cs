@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Trainee_app_backend.Data;
+using Trainee_app_backend.Data.Repositories;
 using TraineeAppBackend.Data.Repositories;
 
 namespace TraineeAppBackend
@@ -29,7 +30,7 @@ namespace TraineeAppBackend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddAutoMapper(typeof(Startup));
             services.AddCors();
 
             services.AddControllers();
@@ -39,6 +40,7 @@ namespace TraineeAppBackend
             });
 
             services.AddScoped<IAchievementRepository, AchievementRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddDbContext<GmfctnContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection"), x => x.MigrationsAssembly("Trainee-app-backend")));
 

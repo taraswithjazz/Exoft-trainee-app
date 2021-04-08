@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Trainee_app_backend.Data;
+using Trainee_app_backend.Data.DTOs;
 using TraineeAppBackend.Data.Entities;
 
 namespace TraineeAppBackend.Data.Repositories
@@ -10,9 +12,11 @@ namespace TraineeAppBackend.Data.Repositories
     public class AchievementRepository : IAchievementRepository
     {
         private readonly GmfctnContext _context;
-        public AchievementRepository(GmfctnContext context)
+        private readonly IMapper _mapper;
+        public AchievementRepository(GmfctnContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         public IEnumerable<Achievement> GetAllAchievements()
@@ -25,17 +29,18 @@ namespace TraineeAppBackend.Data.Repositories
             return _context.Achievements.FirstOrDefault(e => e.Id == id);
         }
 
-        public void CreateAchievement(Achievement achievement)
+        public void CreateAchievement(AchievementCreateDTO achievementCreateDTO)
         {
-            _context.Achievements.Add(achievement);
+            Achievement userEntity = _mapper.Map<Achievement>(achievementCreateDTO);
+            _context.Achievements.Add(userEntity);
             _context.SaveChanges();
         }
-        public void UpdateAchievement(Guid id, Achievement achievement)
+        public void UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO)
         {
             var achievementFound = GetAchievementById(id);
-            achievementFound.Name = achievement.Name;
-            achievementFound.Description = achievement.Description;
-            achievementFound.Xp = achievement.Xp;
+            achievementFound.Name = achievementUpdateDTO.Name;
+            achievementFound.Description = achievementUpdateDTO.Description;
+            achievementFound.Xp = achievementUpdateDTO.Xp;
 
             _context.SaveChanges();
         }

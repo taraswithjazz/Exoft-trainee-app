@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Trainee_app_backend.Data.DTOs;
 using TraineeAppBackend.Data.Entities;
 
 namespace TraineeAppBackend.Data.Repositories
@@ -8,8 +9,8 @@ namespace TraineeAppBackend.Data.Repositories
     {
         public IEnumerable<Achievement> GetAllAchievements();
         public Achievement GetAchievementById(Guid id);
-        public void CreateAchievement(Achievement achievement);
-        public void UpdateAchievement(Guid id, Achievement achievement);
+        public void CreateAchievement(AchievementCreateDTO achievementCreateDTO);
+        public void UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO);
         public void DeleteAchievement(Guid id);
     }
 }

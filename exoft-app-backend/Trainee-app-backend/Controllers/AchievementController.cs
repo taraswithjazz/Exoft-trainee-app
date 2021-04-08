@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using TraineeAppBackend.Data.Repositories;
 using TraineeAppBackend.Data.Entities;
+using Trainee_app_backend.Data.DTOs;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -34,12 +35,13 @@ namespace TraineeAppBackend.Controllers
             var achievement = _repository.GetAchievementById(id);
             return Ok(achievement);
         }
+
         [HttpPost]
-        public IActionResult CreateAchievement(Achievement achievement)
+        public IActionResult CreateAchievement(AchievementCreateDTO achievementCreateDTO)
         {
             try
             {
-                _repository.CreateAchievement(achievement);
+                _repository.CreateAchievement(achievementCreateDTO);
                 return Ok(_repository.GetAllAchievements());
             }
             catch (Exception exc)
@@ -49,11 +51,11 @@ namespace TraineeAppBackend.Controllers
         }
 
         [HttpPost("edit")]
-        public IActionResult UpdateAchievement(Guid id, Achievement achievement)
+        public IActionResult UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO)
         {
             try
             {
-                _repository.UpdateAchievement(id, achievement);
+                _repository.UpdateAchievement(id, achievementUpdateDTO);
                 return Ok(_repository.GetAllAchievements());
             }
             catch (Exception exc)
@@ -66,8 +68,7 @@ namespace TraineeAppBackend.Controllers
         public IActionResult DeleteAchievement(Guid id)
         {
             _repository.DeleteAchievement(id);
-             return Ok(_repository.GetAllAchievements());
-            
+            return Ok(_repository.GetAllAchievements());
         }
     }
 }

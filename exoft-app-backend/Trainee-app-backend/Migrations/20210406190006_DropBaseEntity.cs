@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Trainee_app_backend.Migrations
 {
-    public partial class resolving : Migration
+    public partial class DropBaseEntity : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
