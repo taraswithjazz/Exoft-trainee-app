@@ -1,0 +1,40 @@
+.user-container {
+  padding: 15px;
+  color: var(--text-color);
+
+  .user-header {
+    display: flex;
+    justify-content: flex-end;
+
+    .header-button {
+      height: 30px;
+      background-color: var(--primary-color);
+      color: var(--text-color);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0;
+      box-shadow: none;
+      width: 20%;
+    }
+  }
+
+  .user-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40px;
+
+    .user-image {
+      background-size: cover;
+      background-position: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+      background-image: url("/assets/images/avatar.png");
+      height: 150px;
+      width: 150px;
+      border: 1px solid var(--primary-color);
+    }
+  }
+}

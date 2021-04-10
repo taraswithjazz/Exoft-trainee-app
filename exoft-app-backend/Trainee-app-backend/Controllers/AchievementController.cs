@@ -3,72 +3,84 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TraineeAppBackend.Data.Repositories;
 using TraineeAppBackend.Data.Entities;
 using Trainee_app_backend.Data.DTOs;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Trainee_app_backend.Data.Repositories;
+using Trainee_app_backend.Data;
+using AutoMapper;
+using System.Threading;
+using Microsoft.EntityFrameworkCore;
 
 namespace TraineeAppBackend.Controllers
 {
-    [Route("api/achievement")]
+    [Route("api/achievements")]
     [ApiController]
     public class AchievementController : Controller
     {
-        private IAchievementRepository _repository;
+        private IUnitOfWork UnitOfWork;
+        private readonly IMapper _mapper;
 
-        public AchievementController(IAchievementRepository repository)
+        public AchievementController(GmfctnContext context, IMapper mapper)
         {
-            _repository = repository;
+            UnitOfWork = new UnitOfWork(context);
+            _mapper = mapper;
         }
 
         [HttpGet]
-        public IActionResult GetAllAchievements()
+        public async Task<IActionResult> GetAllAchievements(CancellationToken cancellationToken)
         {
-            var achievements = _repository.GetAllAchievements();
-            return Ok(achievements);
+            var achievements = await UnitOfWork.AchievementRepository.GetAll(cancellationToken);
+            if (achievements == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(achievements);
+            }
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetAchievementById(Guid id)
+        public async Task<IActionResult> GetAchievementById(Guid id, CancellationToken cancellationToken)
         {
-            var achievement = _repository.GetAchievementById(id);
-            return Ok(achievement);
+            var achievement = await UnitOfWork.AchievementRepository.GetById(id, cancellationToken);
+            if (achievement == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(achievement);
+            }
         }
 
         [HttpPost]
-        public IActionResult CreateAchievement(AchievementCreateDTO achievementCreateDTO)
+        public async Task<IActionResult> CreateAchievement(AchievementCreateDTO achievementCreateDTO, CancellationToken cancellationToken)
         {
-            try
-            {
-                _repository.CreateAchievement(achievementCreateDTO);
-                return Ok(_repository.GetAllAchievements());
-            }
-            catch (Exception exc)
-            {
-                throw new Exception(exc.Message);
-            }
+
+            var achievement = _mapper.Map<Achievement>(achievementCreateDTO);
+            achievement.Id = new Guid();
+            await UnitOfWork.AchievementRepository.Create(achievement, cancellationToken);
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return Ok(achievement);
         }
 
         [HttpPost("edit")]
-        public IActionResult UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO)
+        public async Task<IActionResult> UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO, CancellationToken cancellationToken)
         {
-            try
-            {
-                _repository.UpdateAchievement(id, achievementUpdateDTO);
-                return Ok(_repository.GetAllAchievements());
-            }
-            catch (Exception exc)
-            {
-                throw new Exception(exc.Message);
-            }
+            var achievement = await UnitOfWork.AchievementRepository.DbSet.FirstOrDefaultAsync(item => item.Id == id);
+            _mapper.Map(achievementUpdateDTO, achievement);
+            UnitOfWork.AchievementRepository.Update(achievement);
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return Ok(achievement);
         }
 
         [HttpDelete]
-        public IActionResult DeleteAchievement(Guid id)
+        public async Task<IActionResult> DeleteAchievement(Guid id, CancellationToken cancellationToken)
         {
-            _repository.DeleteAchievement(id);
-            return Ok(_repository.GetAllAchievements());
+            await UnitOfWork.AchievementRepository.Delete(id, cancellationToken);
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return Ok(NoContent());
         }
     }
 }

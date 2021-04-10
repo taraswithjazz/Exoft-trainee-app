@@ -35,6 +35,10 @@
 }
 
 @mixin avatar {
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+  object-fit: cover;
   width: 100px;
   height: 100px;
   margin: 4px;

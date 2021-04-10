@@ -9,6 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { RequestAchievementComponent } from './shared/dialogs/request-achievement/request-achievement.component';
 import { UserAchievementsComponent } from './shared/dialogs/user-achievements/user-achievements.component';
 import { SayThanksComponent } from './shared/dialogs/say-thanks/say-thanks.component';
+import { EditProfileComponent } from './shared/dialogs/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SayThanksComponent } from './shared/dialogs/say-thanks/say-thanks.compo
     LayoutComponent,
     RequestAchievementComponent,
     UserAchievementsComponent,
-    SayThanksComponent
+    SayThanksComponent,
+    EditProfileComponent
   ],
   imports: [
     BrowserModule,

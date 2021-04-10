@@ -1,84 +1,85 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Trainee_app_backend.Data;
 using Trainee_app_backend.Data.DTOs;
 using Trainee_app_backend.Data.Entities;
 using Trainee_app_backend.Data.Repositories;
 
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace Trainee_app_backend.Controllers
 {
-    [Route("api/user")]
+    [Route("api/users")]
     [ApiController]
     public class UserController : Controller
     {
-        private IUserRepository _repository;
+        private readonly IUnitOfWork UnitOfWork;
         private readonly IMapper _mapper;
-        public UserController(IUserRepository repository, IMapper mapper)
+        public UserController(GmfctnContext context, IMapper mapper)
         {
-            _repository = repository;
+            UnitOfWork = new UnitOfWork(context);
             _mapper = mapper;
         }
 
         [HttpGet]
-        public IActionResult GetAllUsers()
+        public async Task<IActionResult> GetAllUsers(CancellationToken cancellationToken)
         {
-            var users = _repository.GetAllUsersFull();
-            return Ok(users);
-        }
-
-        [HttpGet("info")]
-        public IActionResult GetAllUsersInfo()
-        {
-            var usersInfo = _mapper.Map<IEnumerable<UserInfoDTO>>(_repository.GetAllUsersShort());
-            return Ok(usersInfo);
+            var users = await UnitOfWork.UserRepository.GetAll(cancellationToken);
+            if (User == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(users);
+            }
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetUserById(Guid id)
+        public async Task<IActionResult> GetUserById(Guid id, CancellationToken cancellationToken)
         {
-            var user = _mapper.Map<UserInfoDTO>(_repository.GetUserById(id));
-            return Ok(user);
+
+            var user = await UnitOfWork.UserRepository.GetById(id, cancellationToken);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(user);
+            }
         }
 
         [HttpPost]
-        public IActionResult CreateUser(UserCreateDTO userCreateDTO)
+        public async Task<IActionResult> CreateUser(UserCreateDTO userCreateDTO, CancellationToken cancellationToken)
         {
-            try
-            {
-                _repository.CreateUser(userCreateDTO);
-                return Ok(_repository.GetAllUsersFull());
-            }
-            catch (Exception exc)
-            {
-                throw new Exception(exc.Message);
-            }
+            var user = _mapper.Map<User>(userCreateDTO);
+            await UnitOfWork.UserRepository.Create(user, cancellationToken);
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return Ok(user);
         }
 
 
         [HttpPost("edit")]
-        public IActionResult UpdateUser(Guid id, UserUpdateDTO userUpdateDTO)
+        public async Task<IActionResult> UpdateUser(Guid id, UserUpdateDTO userUpdateDTO, CancellationToken cancellationToken)
         {
-            try
-            {
-                _repository.UpdateUser(id, userUpdateDTO);
-                return Ok(_repository.GetAllUsersFull());
-            }
-            catch (Exception exc)
-            {
-                throw new Exception(exc.Message);
-            }
+            var user = await UnitOfWork.UserRepository.DbSet.FirstOrDefaultAsync(item => item.Id == id);
+            _mapper.Map(userUpdateDTO, user);
+            UnitOfWork.UserRepository.Update(user);
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return Ok(user);
         }
 
         [HttpDelete]
-        public IActionResult DeleteUser(Guid id)
+        public async Task<IActionResult> DeleteUser(Guid id, CancellationToken cancellationToken)
         {
-            _repository.DeleteUser(id);
-            return Ok(_repository.GetAllUsersFull());
+            await UnitOfWork.UserRepository.Delete(id, cancellationToken);
+            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            return Ok(NoContent());
         }
     }
 }

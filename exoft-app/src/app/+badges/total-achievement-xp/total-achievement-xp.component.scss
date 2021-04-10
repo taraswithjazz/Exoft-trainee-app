@@ -1,0 +1,67 @@
+@mixin flexy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badges-container {
+  @include flexy;
+  padding: 15px;
+  color: var(--text-color);
+  flex-direction: column;
+
+  .badges-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .badges-body {
+    @include flexy;
+    width: 100%;
+    padding-top: 24px;
+    flex-direction: column;
+
+    .xp-count {
+      font-size: 100px;
+      line-height: 100px;
+      color: var(--primary-color);
+    }
+
+    .exp {
+      font-size: 18px;
+      color: var(--text-color);
+    }
+
+    .number {
+      font-size: 50px;
+      line-height: 50px;
+      color: var(--primary-color);
+    }
+
+    .description {
+      font-size: 16px;
+      color: var(--text-color);
+    }
+  }
+
+  .badges-footer {
+    width: 100%;
+
+    .footer-text {
+      @include flexy;
+      padding-top: 24px;
+      font-size: 10px;
+      justify-content: space-around;
+      color: var(--text-color);
+      width: 100%;
+
+      .dot {
+        background-color: var(--primary-color);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

@@ -13,6 +13,5 @@ namespace Trainee_app_backend.Migrations
     [Migration("20210406190006_resolving")]
     partial class resolving
     {
-
     }
 }

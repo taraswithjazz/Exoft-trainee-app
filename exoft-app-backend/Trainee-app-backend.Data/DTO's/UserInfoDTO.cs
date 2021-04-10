@@ -1,4 +1,6 @@
 ﻿using System;
+using Trainee_app_backend.Data.Entities;
+
 namespace Trainee_app_backend.Data.DTOs
 {
     public class UserInfoDTO
@@ -8,7 +10,7 @@ namespace Trainee_app_backend.Data.DTOs
         public string UserName { get; set; }
         public int Xp { get; set; }
         public Guid? AvatarId { get; set; }
-        public string Roles { get; set; }
-        public string Achievements { get; set; }
+        public UserRole[] Roles { get; set; }
+        public UserAchievement[] Achievements { get; set; }
     }
 }

@@ -13,12 +13,11 @@ namespace Trainee_app_backend.Data
             CreateMap<User, UserInfoDTO>();
             CreateMap<UserInfoDTO, User>();
             CreateMap<UserCreateDTO, User>();
+            CreateMap<User, UserCreateDTO>();
             CreateMap<UserUpdateDTO, User>();
-
+            CreateMap<User, UserUpdateDTO>();
             CreateMap<AchievementUpdateDTO, Achievement>();
             CreateMap<AchievementCreateDTO, Achievement>();
         }
-
-        
     }
 }

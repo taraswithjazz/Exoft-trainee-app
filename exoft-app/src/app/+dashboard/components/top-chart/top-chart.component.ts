@@ -22,6 +22,10 @@ export class TopChartComponent implements OnInit {
 
   constructor(private readonly dialog: MatDialog) { }
 
+  ngOnInit(): void {
+    this.showGraph();
+  }
+
   openDialog(): void {
     this.dialog.open(UserAchievementsComponent, { panelClass: 'user-dialog-container' });
   }
@@ -35,9 +39,4 @@ export class TopChartComponent implements OnInit {
       element.size = Math.round((element.xp * this.maxWidth) / this.total) + '%';
     });
   }
-
-  ngOnInit(): void {
-    this.showGraph();
-  }
-
 }
