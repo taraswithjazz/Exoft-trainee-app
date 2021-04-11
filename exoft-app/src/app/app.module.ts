@@ -10,6 +10,8 @@ import { RequestAchievementComponent } from './shared/dialogs/request-achievemen
 import { UserAchievementsComponent } from './shared/dialogs/user-achievements/user-achievements.component';
 import { SayThanksComponent } from './shared/dialogs/say-thanks/say-thanks.component';
 import { EditProfileComponent } from './shared/dialogs/edit-profile/edit-profile.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,14 +20,17 @@ import { EditProfileComponent } from './shared/dialogs/edit-profile/edit-profile
     RequestAchievementComponent,
     UserAchievementsComponent,
     SayThanksComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     AppComponent,

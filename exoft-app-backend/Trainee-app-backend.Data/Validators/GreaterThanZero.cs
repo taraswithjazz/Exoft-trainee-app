@@ -7,8 +7,7 @@ namespace Trainee_app_backend.Data.Validators
     {
         public override bool IsValid(object value)
         {
-            int i;
-            return value != null && int.TryParse(value.ToString(), out i) && i > 0;
+            return value != null && int.TryParse(value.ToString(), out int i) && i > 0;
         }
     }
 }

@@ -14,8 +14,9 @@ namespace Trainee_app_backend.Data.Repositories
 
         public GenericRepository(GmfctnContext context)
         {
-            this._context = context;
+            _context = context;
             DbSet = context.Set<T>();
+
         }
 
         public async Task<IEnumerable<T>> GetAll(CancellationToken cancellationToken)

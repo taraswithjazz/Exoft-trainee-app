@@ -291,3 +291,33 @@
 .achievement-list-container .mat-list-item-content {
   height: 56px;
 }
+
+//SIGN IN
+
+.sign-in-container .mat-form-field-underline {
+  background-color: var(--text-color);
+}
+
+.sign-in-container .mat-form-field-underline .mat-form-field-ripple {
+  background-color: var(--text-color);
+}
+
+.sign-in-container .mat-form-field-placeholder {
+  color: var(--text-color);
+}
+
+.sign-in-container .mat-input-element {
+  caret-color: var(--text-color);
+}
+
+.sign-in-container .mat-form-field.mat-focused .mat-form-field-label {
+  color: var(--text-color);
+}
+
+.sign-in-container .mat-form-field-label {
+  color: var(--text-color);
+}
+
+.sign-in-container .mat-input-element {
+  color: var(--text-color);
+}

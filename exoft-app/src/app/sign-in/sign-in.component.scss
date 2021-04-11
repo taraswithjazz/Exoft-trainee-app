@@ -1,0 +1,77 @@
+.sign-in-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(50, 50, 50);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  .sign-in-body {
+    .sign-in {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      padding: 0;
+      border-radius: 0 0 10px 10px;
+      background-color: rgb(65, 71, 81);
+      border-top: 4px var(--primary-color) solid;
+
+      .sign-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .forgot-pass {
+        font-size: 12px;
+        color: var(--primary-color);
+        padding-top: 10px;
+        text-decoration: underline;
+      }
+
+      .submit-button {
+        background-color: var(--primary-color);
+        color: var(--text-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        box-shadow: none;
+        padding: 5px 0 5px 0;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .sign-in-footer {
+    display: flex;
+    justify-content: center;
+
+    .exoft {
+      width: 30%;
+    }
+  }
+}
+
+.mat-card > :first-child,
+.mat-card-content > :first-child {
+  margin-top: 20px;
+}
+.mat-form-field {
+  width: 80%;
+  margin-top: 10px;
+}
+
+.mat-card-actions,
+.mat-card-subtitle,
+.mat-card-content {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-top: 20px;
+  width: 100%;
+}

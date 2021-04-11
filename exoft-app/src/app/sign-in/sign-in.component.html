@@ -1,0 +1,38 @@
+<div class="sign-in-container">
+  <div class="sign-in-body">
+    <mat-card class="sign-in">
+      <form
+        class="sign-form"
+        [formGroup]="signInForm"
+        (ngSubmit)="onSubmit($event)"
+      >
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+
+          <input matInput formControlName="userName" autocomplete="off" />
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+
+          <input matInput formControlName="password" autocomplete="off" />
+        </mat-form-field>
+
+        <span class="forgot-pass">FORGOT PASSWORD?</span>
+
+        <mat-card-actions>
+          <button
+            mat-raised-button
+            type="submit"
+            class="submit-button"
+            color="primary"
+          >
+            Sign In
+          </button>
+        </mat-card-actions>
+      </form>
+    </mat-card>
+  </div>
+  <div class="sign-in-footer">
+    <img class="exoft" src="../../assets/images/exoft-logo-image.png" />
+  </div>
+</div>
