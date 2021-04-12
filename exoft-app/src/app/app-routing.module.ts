@@ -1,25 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignInComponent } from './sign-in/sign-in.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'sign-in',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   {
-    path: 'sign-in', component: SignInComponent
+    path: 'auth',
+    loadChildren: () => import('./modules/+auth/auth.module').then(module => module.AuthModule)
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./+dashboard/dashboard.module').then(module => module.DashboardModule)
+    path: '',
+    loadChildren: () => import('./modules/layout/layout.module').then(module => module.LayoutModule)
   },
-  {
-    path: 'badges',
-    loadChildren: () => import('./+badges/badges.module').then(module => module.BadgesModule)
-  },
-  { path: '**', redirectTo: 'dashboard' }
+  { path: '**', redirectTo: 'auth' }
 ];
 
 @NgModule({

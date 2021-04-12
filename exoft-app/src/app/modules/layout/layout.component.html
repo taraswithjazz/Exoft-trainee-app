@@ -2,6 +2,7 @@
   <mat-sidenav #sidenav mode="over" [(opened)]="opened" opened>
     <div class="sidenav-container-header">
       <h5>GMFCTN!</h5>
+
       <button
         class="nav-toggle-button"
         mat-icon-button
@@ -14,6 +15,7 @@
 
     <div class="sidenav-container-body">
       <div mat-card-avatar class="sidenav-container-image"></div>
+
       <h3>Taras Chervinka</h3>
       <a
         mat-raised-button
@@ -22,12 +24,16 @@
       >
         Edit profile</a
       >
+
       <a mat-raised-button class="sidenav-container-button">
         Change password
       </a>
+
       <a mat-raised-button class="sidenav-container-button"> Logout </a>
+
       <div class="total">
         <a class="achievements">Total:</a>
+
         <span>4 Badges</span>
       </div>
 
@@ -35,6 +41,7 @@
         <a class="achievements">EXP:</a>
         <span>70 XP</span>
       </div>
+
       <a
         mat-button
         class="sidenav-navigation-item"
@@ -43,6 +50,7 @@
       >
         Dashboard
       </a>
+
       <a
         mat-button
         class="sidenav-navigation-item"
@@ -51,6 +59,7 @@
       >
         Badges
       </a>
+
       <a
         mat-button
         class="sidenav-navigation-item"
@@ -78,14 +87,17 @@
         >
           Dashboard
         </a>
+
         <a mat-button routerLink="badges" routerLinkActive="router-link-active">
           Badges
         </a>
+
         <a mat-button routerLink="" routerLinkActive=""> Order </a>
       </div>
 
       <div class="menu">
         <div mat-card-avatar class="header-image"></div>
+
         <span class="username">Taras Chervinka</span>
         <button
           mat-icon-button
@@ -98,7 +110,9 @@
             class="logout-menu"
           >
             <button mat-menu-item (click)="openDialog()">Edit Profile</button>
+
             <button mat-menu-item>Change Password</button>
+
             <button mat-menu-item>Log Out</button>
           </mat-menu>
           <mat-icon>arrow_drop_down</mat-icon>

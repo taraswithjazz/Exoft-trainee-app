@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EditProfileComponent } from '../shared/dialogs/edit-profile/edit-profile.component';
+import { EditProfileComponent } from '../../shared/dialogs/edit-profile/edit-profile.component';
 
 @Component({
   selector: 'app-layout',
