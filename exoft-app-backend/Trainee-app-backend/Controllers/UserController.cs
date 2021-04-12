@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Trainee_app_backend.Data;
 using Trainee_app_backend.Data.DTOs;
 using Trainee_app_backend.Data.Entities;
 using Trainee_app_backend.Data.Repositories;
+using Trainee_app_backend.Data.Services;
 
 namespace Trainee_app_backend.Controllers
 {
@@ -17,19 +15,18 @@ namespace Trainee_app_backend.Controllers
     [ApiController]
     public class UserController : Controller
     {
-        private readonly IUnitOfWork UnitOfWork;
-        private readonly IMapper _mapper;
-        public UserController(GmfctnContext context, IMapper mapper)
+        private readonly IUserService _userService;
+        public UserController(IUserService userService)
         {
-            UnitOfWork = new UnitOfWork(context);
-            _mapper = mapper;
+            _userService = userService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAllUsers(CancellationToken cancellationToken)
         {
-            var users = await UnitOfWork.UserRepository.GetAll(cancellationToken);
-            if (User == null)
+            var users = await _userService.GetAllUsers(cancellationToken);
+
+            if (users == null)
             {
                 return NotFound();
             }
@@ -42,8 +39,8 @@ namespace Trainee_app_backend.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(Guid id, CancellationToken cancellationToken)
         {
+            var user = await _userService.GetUserById(id, cancellationToken);
 
-            var user = await UnitOfWork.UserRepository.GetById(id, cancellationToken);
             if (user == null)
             {
                 return NotFound();
@@ -57,9 +54,8 @@ namespace Trainee_app_backend.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser(UserCreateDTO userCreateDTO, CancellationToken cancellationToken)
         {
-            var user = _mapper.Map<User>(userCreateDTO);
-            await UnitOfWork.UserRepository.Create(user, cancellationToken);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            var user = await _userService.CreateUser(userCreateDTO, cancellationToken);
+
             return Ok(user);
         }
 
@@ -67,18 +63,16 @@ namespace Trainee_app_backend.Controllers
         [HttpPost("edit")]
         public async Task<IActionResult> UpdateUser(Guid id, UserUpdateDTO userUpdateDTO, CancellationToken cancellationToken)
         {
-            var user = await UnitOfWork.UserRepository.DbSet.FirstOrDefaultAsync(item => item.Id == id);
-            _mapper.Map(userUpdateDTO, user);
-            UnitOfWork.UserRepository.Update(user);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            var user = await _userService.GetUserById(id, cancellationToken);
+
             return Ok(user);
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteUser(Guid id, CancellationToken cancellationToken)
         {
-            await UnitOfWork.UserRepository.Delete(id, cancellationToken);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await _userService.DeleteUser(id, cancellationToken);
+
             return Ok(NoContent());
         }
     }

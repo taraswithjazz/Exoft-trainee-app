@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Trainee_app_backend.Migrations
 {
-    public partial class addUserAchievements : Migration
+    public partial class AddUserAchievements : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

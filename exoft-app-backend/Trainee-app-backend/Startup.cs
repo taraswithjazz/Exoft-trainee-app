@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using Trainee_app_backend.Data;
 using Trainee_app_backend.Data.Entities;
 using Trainee_app_backend.Data.Repositories;
+using Trainee_app_backend.Data.Services;
 using TraineeAppBackend.Data.Entities;
 
 namespace TraineeAppBackend
@@ -39,8 +40,12 @@ namespace TraineeAppBackend
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TraineeAppBackend", Version = "v1" });
             });
 
-            services.AddScoped<GenericRepository<Achievement>>();
-            services.AddScoped<GenericRepository<User>>();
+            services.AddScoped<IAchievementRepository, AchievementRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddTransient<IAchievementService, AchievementService>();
+            services.AddTransient<IUserService, UserService>();
 
             services.AddDbContext<GmfctnContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection"), x => x.MigrationsAssembly("Trainee-app-backend")));
         }

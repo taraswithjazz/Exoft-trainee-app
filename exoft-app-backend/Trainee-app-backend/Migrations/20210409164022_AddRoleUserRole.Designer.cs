@@ -10,8 +10,8 @@ using Trainee_app_backend.Data;
 namespace Trainee_app_backend.Migrations
 {
     [DbContext(typeof(GmfctnContext))]
-    [Migration("20210409164022_addRoleUserRole")]
-    partial class addRoleUserRole
+    [Migration("20210409164022_AddRoleUserRole")]
+    partial class AddRoleUserRole
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

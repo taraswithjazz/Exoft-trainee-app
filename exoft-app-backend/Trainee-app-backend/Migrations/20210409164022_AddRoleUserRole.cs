@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Trainee_app_backend.Migrations
 {
-    public partial class addRoleUserRole : Migration
+    public partial class AddRoleUserRole : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
