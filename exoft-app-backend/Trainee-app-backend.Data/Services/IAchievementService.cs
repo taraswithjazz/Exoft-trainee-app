@@ -9,10 +9,10 @@ namespace Trainee_app_backend.Data.Services
 {
     public interface IAchievementService
     {
-        public Task<IEnumerable<Achievement>> GetAllAchievements(CancellationToken cancellationToken);
-        public Task<Achievement> GetAchievementById(Guid id, CancellationToken cancellationToken);
-        public Task<Achievement> CreateAchievement(AchievementCreateDTO achievement, CancellationToken cancellationToken);
-        public Task DeleteAchievement(Guid id, CancellationToken cancellationToken);
-        public Task<Achievement> UpdateAchievement(Guid id, AchievementUpdateDTO achievement, CancellationToken cancellationToken);
+        public Task<IEnumerable<Achievement>> GetAllAchievementsAsync(CancellationToken cancellationToken);
+        public Task<Achievement> GetAchievementByIdAsync(Guid id, CancellationToken cancellationToken);
+        public Task<Achievement> CreateAchievementAsync(AchievementCreateDTO achievement, CancellationToken cancellationToken);
+        public Task DeleteAchievementAsync(Guid id, CancellationToken cancellationToken);
+        public Task<Achievement> UpdateAchievementAsync(Guid id, AchievementUpdateDTO achievement, CancellationToken cancellationToken);
     }
 }

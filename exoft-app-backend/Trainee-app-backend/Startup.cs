@@ -40,6 +40,7 @@ namespace TraineeAppBackend
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TraineeAppBackend", Version = "v1" });
             });
 
+
             services.AddScoped<IAchievementRepository, AchievementRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();

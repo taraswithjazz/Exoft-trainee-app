@@ -19,33 +19,35 @@ namespace Trainee_app_backend.Data.Repositories
 
         }
 
-        public async Task<IEnumerable<Achievement>> GetAllAchievements(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Achievement>> GetAllAchievementsAsync(CancellationToken cancellationToken)
         {
             return await DbSet.AsNoTracking().ToListAsync<Achievement>(cancellationToken);
         }
 
-        public async Task<Achievement> GetAchievementById(Guid Id, CancellationToken cancellationToken)
+        public async Task<Achievement> GetAchievementByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            return await DbSet.AsNoTracking().FirstOrDefaultAsync(Item => Item.Id == Id, cancellationToken);
+            return await DbSet.AsNoTracking().FirstOrDefaultAsync(item => item.Id == id, cancellationToken);
         }
 
-        public async Task CreateAchievement(Achievement achievement, CancellationToken cancellationToken)
+        public async Task CreateAchievementAsync(Achievement achievement, CancellationToken cancellationToken)
         {
             if (achievement == null)
             {
                 throw new ArgumentNullException(nameof(achievement));
             }
+
             await DbSet.AddAsync(achievement, cancellationToken);
         }
 
-        public async Task DeleteAchievement(Guid id, CancellationToken cancellationToken)
+        public async Task DeleteAchievementAsync(Guid id, CancellationToken cancellationToken)
         {
-            var element = await DbSet.FirstOrDefaultAsync(Item => Item.Id == id, cancellationToken);
-            if (element == null)
+            var achievement = await DbSet.FirstOrDefaultAsync(item => item.Id == id, cancellationToken);
+            if (achievement == null)
             {
                 throw new ArgumentException(nameof(id));
             }
-            DbSet.Remove(element);
+
+            DbSet.Remove(achievement);
         }
 
         public void UpdateAchievement(Achievement achievement)

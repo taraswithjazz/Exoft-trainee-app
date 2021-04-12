@@ -11,6 +11,7 @@ using AutoMapper;
 using System.Threading;
 using Microsoft.EntityFrameworkCore;
 using Trainee_app_backend.Data.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TraineeAppBackend.Controllers
 {
@@ -28,7 +29,7 @@ namespace TraineeAppBackend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllAchievements(CancellationToken cancellationToken)
         {
-            var achievements = await _achievementService.GetAllAchievements(cancellationToken);
+            var achievements = await _achievementService.GetAllAchievementsAsync(cancellationToken);
 
             if (achievements == null)
             {
@@ -43,7 +44,7 @@ namespace TraineeAppBackend.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAchievementById(Guid id, CancellationToken cancellationToken)
         {
-            var achievement = await _achievementService.GetAchievementById(id, cancellationToken);
+            var achievement = await _achievementService.GetAchievementByIdAsync(id, cancellationToken);
 
             if (achievement == null)
             {
@@ -58,7 +59,7 @@ namespace TraineeAppBackend.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateAchievement(AchievementCreateDTO achievementCreateDTO, CancellationToken cancellationToken)
         {
-            var achievement = await _achievementService.CreateAchievement(achievementCreateDTO, cancellationToken);
+            var achievement = await _achievementService.CreateAchievementAsync(achievementCreateDTO, cancellationToken);
 
             return Ok(achievement);
         }
@@ -66,7 +67,7 @@ namespace TraineeAppBackend.Controllers
         [HttpPost("edit")]
         public async Task<IActionResult> UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO, CancellationToken cancellationToken)
         {
-            var achievement = await _achievementService.UpdateAchievement(id, achievementUpdateDTO, cancellationToken);
+            var achievement = await _achievementService.UpdateAchievementAsync(id, achievementUpdateDTO, cancellationToken);
 
             return Ok(achievement);
         }
@@ -74,7 +75,7 @@ namespace TraineeAppBackend.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteAchievement(Guid id, CancellationToken cancellationToken)
         {
-            await _achievementService.DeleteAchievement(id, cancellationToken);
+            await _achievementService.DeleteAchievementAsync(id, cancellationToken);
 
             return Ok(NoContent());
         }

@@ -24,7 +24,7 @@ namespace Trainee_app_backend.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllUsers(CancellationToken cancellationToken)
         {
-            var users = await _userService.GetAllUsers(cancellationToken);
+            var users = await _userService.GetAllUsersAsync(cancellationToken);
 
             if (users == null)
             {
@@ -39,7 +39,7 @@ namespace Trainee_app_backend.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(Guid id, CancellationToken cancellationToken)
         {
-            var user = await _userService.GetUserById(id, cancellationToken);
+            var user = await _userService.GetUserByIdAsync(id, cancellationToken);
 
             if (user == null)
             {
@@ -54,7 +54,7 @@ namespace Trainee_app_backend.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateUser(UserCreateDTO userCreateDTO, CancellationToken cancellationToken)
         {
-            var user = await _userService.CreateUser(userCreateDTO, cancellationToken);
+            var user = await _userService.CreateUserAsync(userCreateDTO, cancellationToken);
 
             return Ok(user);
         }
@@ -63,7 +63,7 @@ namespace Trainee_app_backend.Controllers
         [HttpPost("edit")]
         public async Task<IActionResult> UpdateUser(Guid id, UserUpdateDTO userUpdateDTO, CancellationToken cancellationToken)
         {
-            var user = await _userService.GetUserById(id, cancellationToken);
+            var user = await _userService.GetUserByIdAsync(id, cancellationToken);
 
             return Ok(user);
         }
@@ -71,7 +71,7 @@ namespace Trainee_app_backend.Controllers
         [HttpDelete]
         public async Task<IActionResult> DeleteUser(Guid id, CancellationToken cancellationToken)
         {
-            await _userService.DeleteUser(id, cancellationToken);
+            await _userService.DeleteUserAsync(id, cancellationToken);
 
             return Ok(NoContent());
         }

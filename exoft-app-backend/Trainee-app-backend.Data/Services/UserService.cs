@@ -12,53 +12,53 @@ namespace Trainee_app_backend.Data.Services
     public class UserService : IUserService
     {
         private readonly IUserRepository _userRepository;
-        private IUnitOfWork UnitOfWork;
+        private IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public UserService(IUserRepository userRepository, GmfctnContext context, IMapper mapper)
+        public UserService(IUserRepository userRepository, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _userRepository = userRepository;
-            UnitOfWork = new UnitOfWork(context);
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<User>> GetAllUsers(CancellationToken cancellationToken)
+        public async Task<IEnumerable<User>> GetAllUsersAsync(CancellationToken cancellationToken)
         {
-            var users = await _userRepository.GetAllUsers(cancellationToken);
+            var users = await _userRepository.GetAllUsersAsync(cancellationToken);
 
             return users;
         }
 
-        public async Task<User> GetUserById(Guid id, CancellationToken cancellationToken)
+        public async Task<User> GetUserByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserById(id, cancellationToken);
+            var user = await _userRepository.GetUserByIdAsync(id, cancellationToken);
 
             return user;
         }
 
-        public async Task<User> CreateUser(UserCreateDTO userCreateDTO, CancellationToken cancellationToken)
+        public async Task<User> CreateUserAsync(UserCreateDTO userCreateDTO, CancellationToken cancellationToken)
         {
             var user = _mapper.Map<User>(userCreateDTO);
-            await _userRepository.CreateUser(user, cancellationToken);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await _userRepository.CreateUserAsync(user, cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return user;
         }
 
-        public async Task<User> UpdateUser(Guid id, UserUpdateDTO userUpdateDTO, CancellationToken cancellationToken)
+        public async Task<User> UpdateUserAsync(Guid id, UserUpdateDTO userUpdateDTO, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetUserById(id, cancellationToken);
+            var user = await _userRepository.GetUserByIdAsync(id, cancellationToken);
             _mapper.Map(userUpdateDTO, user);
             _userRepository.UpdateUser(user);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return user;
         }
 
-        public async Task DeleteUser(Guid id, CancellationToken cancellationToken)
+        public async Task DeleteUserAsync(Guid id, CancellationToken cancellationToken)
         {
-            await _userRepository.DeleteUser(id, cancellationToken);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await _userRepository.DeleteUserAsync(id, cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
     }
 }

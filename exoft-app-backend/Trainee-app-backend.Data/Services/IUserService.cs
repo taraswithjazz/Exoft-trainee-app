@@ -9,10 +9,10 @@ namespace Trainee_app_backend.Data.Services
 {
     public interface IUserService
     {
-        public Task<IEnumerable<User>> GetAllUsers(CancellationToken cancellationToken);
-        public Task<User> GetUserById(Guid id, CancellationToken cancellationToken);
-        public Task<User> CreateUser(UserCreateDTO achievement, CancellationToken cancellationToken);
-        public Task DeleteUser(Guid id, CancellationToken cancellationToken);
-        public Task<User> UpdateUser(Guid id, UserUpdateDTO achievement, CancellationToken cancellationToken);
+        public Task<IEnumerable<User>> GetAllUsersAsync(CancellationToken cancellationToken);
+        public Task<User> GetUserByIdAsync(Guid id, CancellationToken cancellationToken);
+        public Task<User> CreateUserAsync(UserCreateDTO user, CancellationToken cancellationToken);
+        public Task DeleteUserAsync(Guid id, CancellationToken cancellationToken);
+        public Task<User> UpdateUserAsync(Guid id, UserUpdateDTO user, CancellationToken cancellationToken);
     }
 }

@@ -12,54 +12,53 @@ namespace Trainee_app_backend.Data.Services
     public class AchievementService : IAchievementService
     {
         private readonly IAchievementRepository _achievementRepository;
-        private IUnitOfWork UnitOfWork;
+        private IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
 
-        public AchievementService(IAchievementRepository achievementRepository, GmfctnContext context, IMapper mapper)
+        public AchievementService(IAchievementRepository achievementRepository, IUnitOfWork unitOfWork, IMapper mapper)
         {
             _achievementRepository = achievementRepository;
-            UnitOfWork = new UnitOfWork(context);
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<Achievement>> GetAllAchievements(CancellationToken cancellationToken)
+        public async Task<IEnumerable<Achievement>> GetAllAchievementsAsync(CancellationToken cancellationToken)
         {
-            var achievements = await _achievementRepository.GetAllAchievements(cancellationToken);
+            var achievements = await _achievementRepository.GetAllAchievementsAsync(cancellationToken);
 
             return achievements;
         }
 
-        public async Task<Achievement> GetAchievementById(Guid id, CancellationToken cancellationToken)
+        public async Task<Achievement> GetAchievementByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            var achievement = await _achievementRepository.GetAchievementById(id, cancellationToken);
+            var achievement = await _achievementRepository.GetAchievementByIdAsync(id, cancellationToken);
 
             return achievement;
         }
 
-        public async Task<Achievement> CreateAchievement(AchievementCreateDTO achievementCreateDTO, CancellationToken cancellationToken)
+        public async Task<Achievement> CreateAchievementAsync(AchievementCreateDTO achievementCreateDTO, CancellationToken cancellationToken)
         {
             var achievement = _mapper.Map<Achievement>(achievementCreateDTO);
-            //achievement.Id = new Guid();
-            await _achievementRepository.CreateAchievement(achievement, cancellationToken);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await _achievementRepository.CreateAchievementAsync(achievement, cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return achievement;
         }
 
-        public async Task<Achievement> UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO, CancellationToken cancellationToken)
+        public async Task<Achievement> UpdateAchievementAsync(Guid id, AchievementUpdateDTO achievementUpdateDTO, CancellationToken cancellationToken)
         {
-            var achievement = await _achievementRepository.GetAchievementById(id, cancellationToken);
+            var achievement = await _achievementRepository.GetAchievementByIdAsync(id, cancellationToken);
             _mapper.Map(achievementUpdateDTO, achievement);
             _achievementRepository.UpdateAchievement(achievement);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
 
             return achievement;
         }
 
-        public async Task DeleteAchievement(Guid id, CancellationToken cancellationToken)
+        public async Task DeleteAchievementAsync(Guid id, CancellationToken cancellationToken)
         {
-            await _achievementRepository.DeleteAchievement(id, cancellationToken);
-            await UnitOfWork.SaveChangesAsync(cancellationToken);
+            await _achievementRepository.DeleteAchievementAsync(id, cancellationToken);
+            await _unitOfWork.SaveChangesAsync(cancellationToken);
         }
     }
 }

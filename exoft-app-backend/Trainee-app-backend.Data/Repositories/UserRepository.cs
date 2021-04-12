@@ -16,35 +16,36 @@ namespace Trainee_app_backend.Data.Repositories
         {
             _context = context;
             DbSet = context.Set<User>();
-
         }
 
-        public async Task<IEnumerable<User>> GetAllUsers(CancellationToken cancellationToken)
+        public async Task<IEnumerable<User>> GetAllUsersAsync(CancellationToken cancellationToken)
         {
             return await DbSet.AsNoTracking().ToListAsync<User>(cancellationToken);
         }
 
-        public async Task<User> GetUserById(Guid Id, CancellationToken cancellationToken)
+        public async Task<User> GetUserByIdAsync(Guid id, CancellationToken cancellationToken)
         {
-            return await DbSet.AsNoTracking().FirstOrDefaultAsync(Item => Item.Id == Id, cancellationToken);
+            return await DbSet.AsNoTracking().FirstOrDefaultAsync(item => item.Id == id, cancellationToken);
         }
 
-        public async Task CreateUser(User user, CancellationToken cancellationToken)
+        public async Task CreateUserAsync(User user, CancellationToken cancellationToken)
         {
             if (user == null)
             {
                 throw new ArgumentNullException(nameof(user));
             }
+
             await DbSet.AddAsync(user, cancellationToken);
         }
 
-        public async Task DeleteUser(Guid id, CancellationToken cancellationToken)
+        public async Task DeleteUserAsync(Guid id, CancellationToken cancellationToken)
         {
-            var user = await DbSet.FirstOrDefaultAsync(Item => Item.Id == id, cancellationToken);
+            var user = await DbSet.FirstOrDefaultAsync(item => item.Id == id, cancellationToken);
             if (user == null)
             {
                 throw new ArgumentException(nameof(id));
             }
+
             DbSet.Remove(user);
         }
 
