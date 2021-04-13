@@ -1,6 +1,8 @@
+@import "../colors/colors.scss";
+
 .mat-menu-panel {
-  background: var(--background-color);
-  color: var(--text-color);
+  background: $background-color;
+  color: $text-color;
 }
 
 .mat-button-focus-overlay {
@@ -40,7 +42,7 @@
 .chart-container .mat-list-base .mat-list-item.mat-list-item-with-avatar,
 .mat-list-base .mat-list-option.mat-list-item-with-avatar {
   height: 40px;
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .chart-container .mat-list-base .mat-list-item .mat-list-avatar,
@@ -68,7 +70,7 @@
 /* personal-achievement component */
 .personal-achievements-container .mat-list-item {
   font-size: 14px;
-  color: var(--text-color);
+  color: $text-color;
   height: 60px;
   display: flex;
 }
@@ -122,47 +124,47 @@
 
 /* Request-achievement-modal */
 .request-dialog-container .mat-dialog-container {
-  background-color: var(--background-color);
+  background-color: $background-color;
   padding: 15px;
   border-radius: 15px;
 }
 
 .select .mat-select-arrow {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .achievement-modal-container .mat-select-placeholder {
-  color: var(--text-color);
+  color: $text-color;
   font-size: 14px;
 }
 
 .achievement-modal-container .mat-form-field-underline {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .achievement-modal-container .mat-form-field-underline .mat-form-field-ripple {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .achievement-modal-container .mat-input-element {
-  caret-color: var(--text-color);
+  caret-color: $text-color;
 }
 
 .mat-select-panel {
-  background-color: var(--background-color);
+  background-color: $background-color;
 }
 
 .mat-option-text {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .mat-select-value {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 /* User profile dialog  */
 .user-dialog-container .mat-dialog-container {
-  background-color: var(--background-color);
+  background-color: $background-color;
   padding: 0;
   border-radius: 15px;
 }
@@ -170,28 +172,28 @@
 // Say thanks dialog
 
 .thanks-dialog-container .mat-dialog-container {
-  background-color: var(--background-color);
+  background-color: $background-color;
   padding: 0;
   border-radius: 15px;
   width: 350px;
 }
 
 .thanks-container .mat-form-field-underline {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .thanks-container .mat-form-field-underline .mat-form-field-ripple {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .thanks-container .mat-input-element {
-  caret-color: var(--text-color);
+  caret-color: $text-color;
 }
 
 //Profile Edit Dialog
 
 .edit-profile-dialog-container .mat-dialog-container {
-  background-color: var(--background-color);
+  background-color: $background-color;
   padding: 0;
   border-radius: 15px;
 }
@@ -201,41 +203,41 @@
 }
 
 .user-profile-container .mat-form-field-underline {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .user-profile-container .mat-form-field-underline .mat-form-field-ripple {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .user-profile-container .mat-form-field-underline {
-  border-bottom: 1px solid var(--text-color);
+  border-bottom: 1px solid $text-color;
 }
 
 .user-profile-container .mat-form-field-placeholder {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .user-profile-container .mat-input-element {
-  caret-color: var(--text-color);
+  caret-color: $text-color;
 }
 
 .user-profile-container .mat-form-field.mat-focused .mat-form-field-label {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .user-profile-container .mat-form-field-label {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .user-profile-container .mat-input-element {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 /* last-achievement component */
 .last-achievements-container .mat-list-item {
   font-size: 14px;
-  color: var(--text-color);
+  color: $text-color;
   height: 60px;
   display: flex;
 }
@@ -285,7 +287,7 @@
 
 //achievements-list
 .achievement-list-container .mat-list-item {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .achievement-list-container .mat-list-item-content {
@@ -295,29 +297,29 @@
 //SIGN IN
 
 .sign-in-container .mat-form-field-underline {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .sign-in-container .mat-form-field-underline .mat-form-field-ripple {
-  background-color: var(--text-color);
+  background-color: $text-color;
 }
 
 .sign-in-container .mat-form-field-placeholder {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .sign-in-container .mat-input-element {
-  caret-color: var(--text-color);
+  caret-color: $text-color;
 }
 
 .sign-in-container .mat-form-field.mat-focused .mat-form-field-label {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .sign-in-container .mat-form-field-label {
-  color: var(--text-color);
+  color: $text-color;
 }
 
 .sign-in-container .mat-input-element {
-  color: var(--text-color);
+  color: $text-color;
 }

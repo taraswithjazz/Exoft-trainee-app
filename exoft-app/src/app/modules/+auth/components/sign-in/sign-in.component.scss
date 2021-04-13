@@ -1,3 +1,5 @@
+@import "../../../../../assets/colors/colors.scss";
+
 .sign-in-container {
   width: 100vw;
   height: 100vh;
@@ -16,7 +18,7 @@
       padding: 0;
       border-radius: 0 0 10px 10px;
       background-color: rgb(65, 71, 81);
-      border-top: 4px var(--primary-color) solid;
+      border-top: 4px $primary-color solid;
 
       .sign-form {
         width: 100%;
@@ -27,14 +29,14 @@
 
       .forgot-pass {
         font-size: 12px;
-        color: var(--primary-color);
+        color: $primary-color;
         padding-top: 10px;
         text-decoration: underline;
       }
 
       .submit-button {
-        background-color: var(--primary-color);
-        color: var(--text-color);
+        background-color: $primary-color;
+        color: $text-color;
         display: flex;
         justify-content: center;
         align-items: center;

@@ -1,41 +1,13 @@
-@mixin fullSize {
-  width: 100%;
-  height: 100%;
-}
+@import "../../../../../assets/colors/colors.scss";
 
 mat-grid-list {
   margin: 10px;
 
   mat-grid-tile {
-    background-color: var(--background-color);
+    background-color: $background-color;
 
     .greetings {
-      @include fullSize();
-      background-color: var(--primary-color);
-    }
-
-    .personal-achievements {
-      @include fullSize();
-    }
-
-    .thanks {
-      @include fullSize();
-    }
-
-    .badges {
-      @include fullSize();
-    }
-
-    .exoft-achievements {
-      @include fullSize();
-    }
-
-    .challenges {
-      @include fullSize();
-    }
-
-    .top-chart {
-      @include fullSize();
+      background-color: $primary-color;
     }
   }
 }

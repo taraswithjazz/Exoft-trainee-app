@@ -1,10 +1,12 @@
+@import "../../../../../assets/colors/colors.scss";
+
 .last-achievements-container {
   padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: space-between;
-  color: var(--text-color);
+  color: $text-color;
 
   .last-achievements-header {
     display: flex;
@@ -17,8 +19,8 @@
 
     .header-button {
       height: 30px;
-      background-color: var(--primary-color);
-      color: var(--text-color);
+      background-color: $primary-color;
+      color: $text-color;
       display: flex;
       justify-content: center;
       align-items: center;

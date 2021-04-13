@@ -1,5 +1,7 @@
+@import "../../../../../assets/colors/colors.scss";
+
 .greetings {
-  color: var(--text-color);
+  color: $text-color;
   padding: 34px;
 
   .greeting {

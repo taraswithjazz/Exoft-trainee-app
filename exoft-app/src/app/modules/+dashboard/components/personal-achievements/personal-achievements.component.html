@@ -15,10 +15,10 @@
         <span class="achievement-title">{{ achievement.title }}</span>
 
         <span class="achievement-granted"
-          >{{ achievement.granted }} mins ago
+          >{{ achievement.granted | timeWhen }}
         </span>
       </div>
-      <span class="monet"> </span>
+      <span class="coin"> </span>
 
       <span class="achiemenet-exp">&nbsp; + {{ achievement.xp }} xp </span>
     </mat-list-item>

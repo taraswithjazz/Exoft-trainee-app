@@ -11,6 +11,7 @@ import { ThanksComponent } from './components/thanks/thanks.component';
 import { TopChartComponent } from './components/top-chart/top-chart.component';
 import { BadgesComponent } from './components/badges/badges.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
+import { ApplicationPipesModule } from 'src/app/shared/pipes/application-pipes.module';
 
 const routes = [
   {
@@ -33,7 +34,8 @@ const routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    ApplicationPipesModule
   ]
 })
 export class DashboardModule { }

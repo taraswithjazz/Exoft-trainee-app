@@ -1,8 +1,10 @@
-@mixin flexy {
+@import "../../../assets/colors/colors.scss";
+
+@mixin flexbox {
   display: flex;
   align-items: center;
 }
-@mixin bgImage {
+@mixin image-cover {
   background-size: cover;
   background-position: center;
   border-radius: 50%;
@@ -14,13 +16,13 @@
   height: 100%;
 
   .mat-sidenav {
-    background-color: var(--background-color);
+    background-color: $background-color;
     width: 250px;
 
     .sidenav-container-header {
-      @include flexy();
+      @include flexbox();
       justify-content: flex-end;
-      color: var(--text-color);
+      color: $text-color;
       height: 64px;
 
       .nav-toggle-button {
@@ -33,13 +35,13 @@
     }
 
     .sidenav-container-body {
-      @include flexy();
+      @include flexbox();
       flex-direction: column;
-      color: var(--text-color);
+      color: $text-color;
       padding-top: 40px;
 
       .sidenav-container-image {
-        @include bgImage();
+        @include image-cover();
         background-image: url("/assets/images/avatar.png");
         height: 150px;
         width: 150px;
@@ -48,22 +50,22 @@
       .sidenav-container-button {
         margin-top: 8px;
         width: 144px;
-        background-color: var(--primary-color);
-        color: var(--text-color);
+        background-color: $primary-color;
+        color: $text-color;
       }
 
       .total {
         margin-top: 16px;
 
         .achievements {
-          color: var(--primary-color);
+          color: $primary-color;
           font-size: 18px;
         }
       }
 
       .exp {
         .achievements {
-          color: var(--primary-color);
+          color: $primary-color;
           font-size: 18px;
         }
       }
@@ -74,32 +76,32 @@
       }
 
       .container-active {
-        text-decoration: underline var(--primary-color) 4px;
+        text-decoration: underline $primary-color 4px;
         text-underline-offset: 0.2em;
-        color: var(--primary-color);
+        color: $primary-color;
       }
     }
   }
   .mat-sidenav-content {
     .mat-toolbar {
-      @include flexy();
+      @include flexbox();
       justify-content: space-between;
-      background-color: var(--background-color);
-      color: var(--text-color);
+      background-color: $background-color;
+      color: $text-color;
 
       .menu {
-        @include flexy();
+        @include flexbox();
         height: 100%;
       }
 
       .router-link-active {
-        border-top: var(--primary-color) solid 4px;
+        border-top: $primary-color solid 4px;
         border-radius: 0;
-        color: var(--primary-color);
+        color: $primary-color;
       }
 
       .header-image {
-        @include bgImage;
+        @include image-cover;
         background-image: url("/assets/images/avatar.png");
         height: 40px;
         width: 40px;
@@ -110,11 +112,11 @@
       }
 
       .logout-icon {
-        @include flexy();
+        @include flexbox();
         justify-content: center;
 
         .material-icons {
-          @include flexy();
+          @include flexbox();
           justify-content: center;
           font-size: 32px;
         }
@@ -132,5 +134,5 @@
 }
 
 button.mat-menu-item {
-  color: var(--text-color);
+  color: $text-color;
 }

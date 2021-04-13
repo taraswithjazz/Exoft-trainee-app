@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./challenges.component.scss']
 })
 export class ChallengesComponent {
-  public availableEvents = [
+  availableEvents = [
     { cap: 'assets/images/bike.jpg' },
   ];
-  public finishedEvents = [
+  finishedEvents = [
     { cap: 'assets/images/swim.jpeg' },
     { cap: 'assets/images/swim.jpeg' },
     { cap: 'assets/images/swim.jpeg' },

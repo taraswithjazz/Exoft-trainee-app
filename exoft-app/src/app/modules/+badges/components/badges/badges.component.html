@@ -1,22 +1,26 @@
 <mat-grid-list cols="6" [gutterSize]="'10px'" rowHeight="365px">
   <mat-grid-tile [colspan]="2" [rowspan]="1">
-    <app-last-achievements class="last-achievements"></app-last-achievements>
+    <app-last-achievements
+      class="last-achievements page-block"
+    ></app-last-achievements>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="2" [rowspan]="1">
-    <app-total-achievement-xp class="total-achievement-xp">
+    <app-total-achievement-xp class="total-achievement-xp page-block">
     </app-total-achievement-xp>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="2" [rowspan]="1">
-    <app-user class="user"></app-user>
+    <app-user class="user page-block"></app-user>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="4" [rowspan]="1">
-    <app-achievements-list class="achievements-list"></app-achievements-list>
+    <app-achievements-list
+      class="achievements-list page-block"
+    ></app-achievements-list>
   </mat-grid-tile>
 
   <mat-grid-tile [colspan]="2" [rowspan]="1">
-    <app-thanks class="thanks"></app-thanks>
+    <app-thanks class="thanks page-block"></app-thanks>
   </mat-grid-tile>
 </mat-grid-list>

@@ -1,6 +1,8 @@
+@import "../../../../../assets/colors/colors.scss";
+
 .achievement-list-container {
   padding: 15px;
-  color: var(--text-color);
+  color: $text-color;
   height: 336px;
   overflow-y: auto;
 
@@ -15,11 +17,11 @@
   .achievement-list-body {
     display: flex;
     padding-top: 20px;
-    color: var(--text-color);
+    color: $text-color;
 
     .mat-table {
       width: 100%;
-      background-color: var(--background-color);
+      background-color: $background-color;
 
       .mat-header-cell.cdk-header-cell.cdk-column-Achievement.mat-column-Achievement {
         width: 70%;
@@ -39,13 +41,13 @@
       td.mat-cell {
         padding-top: 10px;
         border-bottom-style: none;
-        color: var(--text-color);
+        color: $text-color;
       }
 
       th.mat-header-cell {
         font-size: 16px;
         border-bottom-style: none;
-        color: var(--text-color);
+        color: $text-color;
       }
 
       .name {
@@ -72,5 +74,5 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--primary-color);
+  background: $primary-color;
 }

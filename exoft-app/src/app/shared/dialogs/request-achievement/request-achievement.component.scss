@@ -1,3 +1,5 @@
+@import "../../../../assets/colors/colors.scss";
+
 @mixin flexy {
   display: flex;
   justify-content: center;
@@ -5,15 +7,15 @@
 }
 
 .achievement-modal-container {
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: $text-color;
+  background-color: $background-color;
 
   .cancel {
     display: flex;
     justify-content: flex-end;
 
     .cancel-button {
-      color: var(--primary-color);
+      color: $primary-color;
     }
 
     .cancel-button:hover {
@@ -31,7 +33,7 @@
   }
 
   .select {
-    border-bottom: 1px solid var(--text-color);
+    border-bottom: 1px solid $text-color;
     height: 20px;
     margin: 10px 0 10px 0;
   }
@@ -40,7 +42,7 @@
     width: 100%;
 
     .label {
-      color: var(--text-color);
+      color: $text-color;
     }
   }
 
@@ -48,8 +50,8 @@
     @include flexy();
 
     .submit-button {
-      background-color: var(--primary-color);
-      color: var(--text-color);
+      background-color: $primary-color;
+      color: $text-color;
       width: 30%;
       display: flex;
       justify-content: center;

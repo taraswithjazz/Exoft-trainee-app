@@ -1,9 +1,11 @@
+@import "../../../../assets/colors/colors.scss";
+
 .thanks-container {
   .thanks-header {
     display: flex;
     justify-content: flex-end;
     padding: 10px;
-    color: var(--text-color);
+    color: $text-color;
 
     .cancel-button:hover {
       cursor: pointer;
@@ -18,19 +20,19 @@
 
     .text {
       font-size: 18px;
-      color: var(--text-color);
+      color: $text-color;
     }
 
     .message {
       width: 100%;
       padding: 20px 0 20px 0;
-      color: var(--text-color);
+      color: $text-color;
     }
   }
   .thanks-footer {
     .thanks-button {
-      background-color: var(--primary-color);
-      color: var(--text-color);
+      background-color: $primary-color;
+      color: $text-color;
       display: flex;
       justify-content: center;
       align-items: center;

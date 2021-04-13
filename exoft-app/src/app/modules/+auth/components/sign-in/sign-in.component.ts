@@ -7,11 +7,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent {
-
   signInForm = new FormGroup({
     userName: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
   });
+
   onSubmit(event): void {
     event.currentTarget.reset();
     this.signInForm.reset();

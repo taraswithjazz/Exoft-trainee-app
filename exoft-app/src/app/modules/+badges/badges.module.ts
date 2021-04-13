@@ -9,6 +9,7 @@ import { TotalAchievementXpComponent } from './components/total-achievement-xp/t
 import { UserComponent } from './components/user/user.component';
 import { AchievementsListComponent } from './components/achievements-list/achievements-list.component';
 import { ThanksComponent } from './components/thanks/thanks.component';
+import { ApplicationPipesModule } from 'src/app/shared/pipes/application-pipes.module';
 
 const routes = [
   {
@@ -29,7 +30,8 @@ const routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MaterialModule
+    MaterialModule,
+    ApplicationPipesModule
   ]
 })
 export class BadgesModule { }

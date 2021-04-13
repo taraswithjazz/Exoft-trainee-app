@@ -1,6 +1,6 @@
 <div class="last-achievements-container">
   <div class="last-achievements-header">
-    <span class="title">PERSONAL ACHIEVEMENTS</span>
+    <span class="title">LAST ACHIEVEMENTS</span>
 
     <a mat-raised-button class="header-button" (click)="openDialog()">
       Request
@@ -15,7 +15,7 @@
         <span class="achievement-title">{{ achievement.title }}</span>
 
         <span class="achievement-granted"
-          >{{ achievement.granted }} mins ago
+          >{{ achievement.granted | timeWhen }}
         </span>
       </div>
       <span class="monet"> </span>

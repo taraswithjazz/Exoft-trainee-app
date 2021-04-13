@@ -1,6 +1,8 @@
+@import "../../../../../assets/colors/colors.scss";
+
 .user-container {
   padding: 15px;
-  color: var(--text-color);
+  color: $text-color;
 
   .user-header {
     display: flex;
@@ -8,8 +10,8 @@
 
     .header-button {
       height: 30px;
-      background-color: var(--primary-color);
-      color: var(--text-color);
+      background-color: $primary-color;
+      color: $text-color;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -34,7 +36,7 @@
       background-image: url("/assets/images/avatar.png");
       height: 150px;
       width: 150px;
-      border: 1px solid var(--primary-color);
+      border: 1px solid $primary-color;
     }
   }
 }

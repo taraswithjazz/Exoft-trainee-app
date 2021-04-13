@@ -1,9 +1,11 @@
+@import "../../../../assets/colors/colors.scss";
+
 .user-container {
   .user-header {
     padding: 10px;
     display: flex;
     justify-content: flex-end;
-    color: var(--text-color);
+    color: $text-color;
 
     .cancel-button:hover {
       cursor: pointer;
@@ -33,17 +35,17 @@
       .username {
         padding-top: 10px;
         font-size: 22px;
-        color: var(--text-color);
+        color: $text-color;
       }
 
       .exp {
-        color: var(--primary-color);
+        color: $primary-color;
         font-size: 18px;
       }
 
       .exp-count {
         padding-left: 4px;
-        color: var(--text-color);
+        color: $text-color;
         font-size: 18px;
       }
     }
@@ -76,7 +78,7 @@
         }
         .achievement-name {
           padding-top: 10px;
-          color: var(--text-color);
+          color: $text-color;
           font-size: 12px;
           max-width: 75px;
           text-align: center;
@@ -85,7 +87,7 @@
 
       .achievement-item::before {
         content: attr(count);
-        color: var(--text-color);
+        color: $text-color;
         white-space: pre;
         display: flex;
         justify-content: center;
@@ -96,9 +98,9 @@
         -webkit-border-radius: 8px;
         border-radius: 50%;
         font-size: 12px;
-        border: 1px solid var(--text-color);
+        border: 1px solid $text-color;
         right: 6px;
-        background-color: var(--primary-color);
+        background-color: $primary-color;
         position: absolute;
       }
     }
@@ -107,8 +109,8 @@
   .thanks-button {
     display: flex;
     justify-content: center;
-    background-color: var(--primary-color);
-    color: var(--text-color);
+    background-color: $primary-color;
+    color: $text-color;
     font-size: 22px;
     margin-top: 40px;
   }
@@ -122,6 +124,6 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
+    background: $primary-color;
   }
 }

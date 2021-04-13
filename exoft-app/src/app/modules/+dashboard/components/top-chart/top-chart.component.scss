@@ -1,6 +1,8 @@
+@import "../../../../../assets/colors/colors.scss";
+
 .chart-container {
   padding: 15px;
-  color: var(--text-color);
+  color: $text-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -35,8 +37,8 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
-        border-bottom: var(--primary-color) solid 1px;
-        color: var(--primary-color);
+        border-bottom: $primary-color solid 1px;
+        color: $primary-color;
       }
 
       .user-list {
