@@ -1,11 +1,7 @@
 <div class="sign-in-container">
   <div class="sign-in-body">
     <mat-card class="sign-in">
-      <form
-        class="sign-form"
-        [formGroup]="signInForm"
-        (ngSubmit)="onSubmit($event)"
-      >
+      <form class="sign-form" [formGroup]="signInForm" (ngSubmit)="onSubmit($event)">
         <mat-form-field>
           <mat-label>Username</mat-label>
 
@@ -20,12 +16,7 @@
         <span class="forgot-pass">FORGOT PASSWORD?</span>
 
         <mat-card-actions>
-          <button
-            mat-raised-button
-            type="submit"
-            class="submit-button"
-            color="primary"
-          >
+          <button mat-raised-button type="submit" class="submit-button">
             Sign In
           </button>
         </mat-card-actions>

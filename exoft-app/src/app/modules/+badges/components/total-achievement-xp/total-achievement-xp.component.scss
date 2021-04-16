@@ -13,7 +13,7 @@
 
   .badges-body {
     width: 100%;
-    padding-top: 24px;
+    padding-top: 15%;
     flex-direction: column;
 
     .xp-count {
@@ -41,10 +41,11 @@
 
   .badges-footer {
     width: 100%;
+    padding-top: 13%;
 
     .footer-text {
-      padding-top: 24px;
-      font-size: 10px;
+      // padding-top: 24px;
+      font-size: 12px;
       justify-content: space-around;
       color: $text-color;
       width: 100%;

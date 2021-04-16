@@ -13,17 +13,17 @@
 
   .badges-body {
     width: 100%;
-    padding-top: 50px;
+    padding-top: 25%;
     flex-direction: column;
 
     .number {
-      font-size: 100px;
-      line-height: 100px;
+      font-size: 104px;
+      line-height: 104px;
       color: $primary-color;
     }
 
     .description {
-      font-size: 18px;
+      font-size: 20px;
       color: $text-color;
     }
   }
@@ -32,8 +32,8 @@
     width: 100%;
 
     .footer-text {
-      padding-top: 24px;
-      font-size: 10px;
+      padding-top: 20%;
+      font-size: 14px;
       justify-content: space-around;
       color: $text-color;
       width: 100%;

@@ -13,12 +13,7 @@
 
       <mat-list class="user-list">
         <mat-list-item *ngFor="let user of users">
-          <img
-            matListAvatar
-            class="user-image"
-            [src]="user.avatar"
-            (click)="openDialog()"
-          />
+          <img matListAvatar class="user-image" [src]="user.avatar" (click)="openDialog()"/>
           <div matLine>
             <span class="user-title">{{ user.name }}</span>
 
@@ -31,11 +26,7 @@
     <div class="chart-list">
       <mat-list>
         <mat-list-item *ngFor="let user of users">
-          <div
-            class="bar"
-            [style.background-color]="user.color"
-            [style.width]="user.size"
-          ></div>
+          <div class="bar" [style.background-color]="user.color" [style.width]="user.size"></div>
         </mat-list-item>
       </mat-list>
     </div>

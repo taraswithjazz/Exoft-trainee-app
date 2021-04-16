@@ -3,36 +3,36 @@
     <mat-icon class="icon" [mat-dialog-close]="true">arrow_back</mat-icon>
     <span class="text">Profile settings</span>
   </div>
-  <form class="change-info-container">
+  <form class="change-info-container" [formGroup]="editProfileForm" (ngSubmit)="onSubmit($event)">
     <div class="fields">
       <div class="fullName">
         <mat-form-field appearance="fill">
           <mat-label>First Name</mat-label>
 
-          <input matInput autocomplete="off" />
+          <input formControlName="firstName" matInput autocomplete="off" />
         </mat-form-field>
 
         <mat-form-field appearance="fill">
           <mat-label>Last Name</mat-label>
 
-          <input matInput autocomplete="off" />
+          <input formControlName="lastName" matInput autocomplete="off" />
         </mat-form-field>
       </div>
 
       <mat-form-field appearance="fill">
         <mat-label>Email Address</mat-label>
 
-        <input matInput autocomplete="off" />
+        <input formControlName="email" matInput autocomplete="off" />
       </mat-form-field>
 
       <mat-form-field appearance="fill">
         <mat-label>Status</mat-label>
 
-        <input matInput autocomplete="off" />
+        <input formControlName="status" matInput autocomplete="off" />
       </mat-form-field>
     </div>
-    <a mat-raised-button class="save-button" type="submit" disabled
-      >SAVE CHANGES</a
-    >
+    <button mat-raised-button class="save-button" type="submit">
+      SAVE CHANGES
+    </button>
   </form>
 </div>

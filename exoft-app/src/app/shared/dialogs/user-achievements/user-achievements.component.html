@@ -14,11 +14,7 @@
     </div>
 
     <div class="user-achievements">
-      <div
-        class="achievement-item"
-        *ngFor="let achievement of achievements"
-        [attr.count]="achievement.count"
-      >
+      <div class="achievement-item" *ngFor="let achievement of achievements" [attr.count]="achievement.count">
         <img class="achievement-image" [src]="achievement.avatar" alt="..." />
         <span class="achievement-name">{{ achievement.title }}</span>
       </div>

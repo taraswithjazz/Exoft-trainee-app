@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/shared/material/material.module';
+import { ApplicationPipesModule } from 'src/app/shared/pipes/application-pipes.module';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { GreetingsComponent } from './components/greetings/greetings.component';
@@ -11,7 +12,6 @@ import { ThanksComponent } from './components/thanks/thanks.component';
 import { TopChartComponent } from './components/top-chart/top-chart.component';
 import { BadgesComponent } from './components/badges/badges.component';
 import { ChallengesComponent } from './components/challenges/challenges.component';
-import { ApplicationPipesModule } from 'src/app/shared/pipes/application-pipes.module';
 
 const routes = [
   {

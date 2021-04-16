@@ -22,15 +22,13 @@
   .achievements-body {
     padding-top: 30px;
     overflow-y: auto;
-    height: 662px;
+    height: 906px;
     position: relative;
 
-    .achievements-item::before {
-      content: "";
-      white-space: pre;
+    .user-image {
       display: inline-block;
-      width: 25px;
-      height: 25px;
+      width: 40px;
+      height: 40px;
       -moz-border-radius: 8px;
       -webkit-border-radius: 8px;
       border-radius: 50%;
@@ -45,8 +43,8 @@
       display: flex;
       justify-content: space-between;
       width: 80%;
-      margin-left: 12px;
-      padding: 6px 0 0 20px;
+      margin-left: 20px;
+      padding: 10px 0 0 30px;
       border-left: 2px solid grey;
 
       .username {
@@ -59,11 +57,11 @@
 
     .achievements-item-body {
       padding-top: 10px;
-      margin-left: 12px;
+      margin-left: 20px;
       border-left: 2px solid grey;
 
       .achivement-info {
-        padding: 0 0 0px 6px;
+        padding: 0 0 0 20px;
       }
 
       .records-button {
@@ -80,7 +78,7 @@
           border-radius: 10px;
           text-align: center;
           width: 30%;
-          margin-left: 10px;
+          margin-left: 20px;
         }
       }
     }
