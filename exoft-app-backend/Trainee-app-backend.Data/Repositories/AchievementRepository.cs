@@ -1,38 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using TraineeAppBackend.Data.Entities;
 
-namespace TraineeAppBackend.Data.Repositories
+namespace Trainee_app_backend.Data.Repositories
 {
     public class AchievementRepository : IAchievementRepository
     {
+        public GmfctnContext _context;
+        public DbSet<Achievement> DbSet;
 
-        public List<Achievement> achievements = new List<Achievement>(){
-            new Achievement {
-             Name = "Exoft Turbo Power",
-             Description = "Granted for coding fast",
-             Xp = 15,
-             IconId = new Guid("11111111-1111-1111-1111-111111111113"),
-             Id = new Guid("11111111-1111-1111-1111-111111111111")
-            },
-            new Achievement {
-             Name = "Exoft Turbo Power",
-             Description = "Granted for coding fast",
-             Xp = 15,
-             IconId = new Guid("11111111-1111-1111-1111-111111111114"),
-             Id = new Guid("11111111-1111-1111-1111-111111111112")
-            }
-        };
-
-        public IEnumerable<Achievement> GetAllAchievements()
+        public AchievementRepository(GmfctnContext context)
         {
-            return achievements;
+            _context = context;
+            DbSet = context.Set<Achievement>();
+
         }
 
-        public Achievement GetAchievementById(Guid id)
+        public async Task<IEnumerable<Achievement>> GetAllAchievementsAsync(CancellationToken cancellationToken)
         {
-            return achievements.FirstOrDefault(e => e.Id == id);
+            return await DbSet.AsNoTracking().ToListAsync<Achievement>(cancellationToken);
+        }
+
+        public async Task<Achievement> GetAchievementByIdAsync(Guid id, CancellationToken cancellationToken)
+        {
+            return await DbSet.AsNoTracking().FirstOrDefaultAsync(item => item.Id == id, cancellationToken);
+        }
+
+        public async Task CreateAchievementAsync(Achievement achievement, CancellationToken cancellationToken)
+        {
+            if (achievement == null)
+            {
+                throw new ArgumentNullException(nameof(achievement));
+            }
+
+            await DbSet.AddAsync(achievement, cancellationToken);
+        }
+
+        public async Task DeleteAchievementAsync(Guid id, CancellationToken cancellationToken)
+        {
+            var achievement = await DbSet.FirstOrDefaultAsync(item => item.Id == id, cancellationToken);
+            if (achievement == null)
+            {
+                throw new ArgumentException(nameof(id));
+            }
+
+            DbSet.Remove(achievement);
+        }
+
+        public void UpdateAchievement(Achievement achievement)
+        {
+            DbSet.Attach(achievement);
+            _context.Entry(achievement).State = EntityState.Modified;
         }
     }
 }

@@ -1,0 +1,27 @@
+<div class="achievement-modal-container">
+  <div class="cancel">
+    <a class="cancel-button" [mat-dialog-close]="true"
+      ><mat-icon>close</mat-icon></a
+    >
+  </div>
+  <div class="title">
+    <span class="title-text">
+      Please, leave a message and your achievement will be assigned soon
+    </span>
+  </div>
+  <form>
+    <mat-select class="select" placeholder="Achievement">
+      <mat-option value="Achievement1">Achievement 1</mat-option>
+      <mat-option value="Achievement2">Achievement 2</mat-option>
+      <mat-option value="Achievement3">Achievement 3</mat-option>
+    </mat-select>
+
+    <mat-form-field class="message">
+      <mat-label class="label">Your message</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+    <div class="submit">
+      <a mat-raised-button class="submit-button" disabled>Send</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,29 @@
+<div class="challenges-container">
+  <div class="challenges-header">
+    <span class="title">CHALLENGES</span>
+
+    <a mat-raised-button class="header-button">Show more</a>
+  </div>
+
+  <div class="challenges-body">
+    <div class="available-events">
+      <span class="availability">Available</span>
+
+      <div class="events">
+        <div class="event" *ngFor="let availableEvent of availableEvents">
+          <img [src]="availableEvent.cap" class="event-avatar" />
+        </div>
+      </div>
+    </div>
+
+    <div class="finished-events">
+      <span class="availability">Finished</span>
+      
+      <div class="events">
+        <div class="event" *ngFor="let finishedEvent of finishedEvents">
+          <img [src]="finishedEvent.cap" class="event-avatar" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

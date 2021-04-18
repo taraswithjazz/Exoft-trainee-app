@@ -1,0 +1,26 @@
+<div class="personal-achievements-container">
+  <div class="personal-achievements-header">
+    <span class="title">PERSONAL ACHIEVEMENTS</span>
+
+    <a mat-raised-button class="header-button" (click)="openDialog()">
+      Request
+    </a>
+  </div>
+
+  <mat-list>
+    <mat-list-item *ngFor="let achievement of achievements">
+      <img matListAvatar [src]="achievement.avatar" />
+
+      <div matLine class="achievement-info">
+        <span class="achievement-title">{{ achievement.title }}</span>
+
+        <span class="achievement-granted"
+          >{{ achievement.granted | timeWhen }}
+        </span>
+      </div>
+      <span class="coin"> </span>
+
+      <span class="achievement-exp">&nbsp; + {{ achievement.xp }} xp </span>
+    </mat-list-item>
+  </mat-list>
+</div>

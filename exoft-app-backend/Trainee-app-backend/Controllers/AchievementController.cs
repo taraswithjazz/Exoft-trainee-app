@@ -3,36 +3,81 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using TraineeAppBackend.Data.Repositories;
 using TraineeAppBackend.Data.Entities;
-
-// For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using Trainee_app_backend.Data.DTOs;
+using Trainee_app_backend.Data.Repositories;
+using Trainee_app_backend.Data;
+using AutoMapper;
+using System.Threading;
+using Microsoft.EntityFrameworkCore;
+using Trainee_app_backend.Data.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TraineeAppBackend.Controllers
 {
-    [Route("api/achievement")]
+    [Route("api/achievements")]
     [ApiController]
     public class AchievementController : Controller
     {
-        private IAchievementRepository _repository;
+        private readonly IAchievementService _achievementService;
 
-        public AchievementController()
+        public AchievementController(IAchievementService achievementService)
         {
-            _repository = new AchievementRepository();
+            _achievementService = achievementService;
         }
 
         [HttpGet]
-        public IActionResult GetAllAchievements()
+        public async Task<IActionResult> GetAllAchievements(CancellationToken cancellationToken)
         {
-            var achievements = _repository.GetAllAchievements();
-            return Ok(achievements);
+            var achievements = await _achievementService.GetAllAchievementsAsync(cancellationToken);
+
+            if (achievements == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(achievements);
+            }
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetAchievementById(Guid id)
+        public async Task<IActionResult> GetAchievementById(Guid id, CancellationToken cancellationToken)
         {
-            var achievement = _repository.GetAchievementById(id);
+            var achievement = await _achievementService.GetAchievementByIdAsync(id, cancellationToken);
+
+            if (achievement == null)
+            {
+                return NotFound();
+            }
+            else
+            {
+                return Ok(achievement);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAchievement(AchievementCreateDTO achievementCreateDTO, CancellationToken cancellationToken)
+        {
+            var achievement = await _achievementService.CreateAchievementAsync(achievementCreateDTO, cancellationToken);
+
             return Ok(achievement);
+        }
+
+        [HttpPost("edit")]
+        public async Task<IActionResult> UpdateAchievement(Guid id, AchievementUpdateDTO achievementUpdateDTO, CancellationToken cancellationToken)
+        {
+            var achievement = await _achievementService.UpdateAchievementAsync(id, achievementUpdateDTO, cancellationToken);
+
+            return Ok(achievement);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAchievement(Guid id, CancellationToken cancellationToken)
+        {
+            await _achievementService.DeleteAchievementAsync(id, cancellationToken);
+
+            return Ok(NoContent());
         }
     }
 }

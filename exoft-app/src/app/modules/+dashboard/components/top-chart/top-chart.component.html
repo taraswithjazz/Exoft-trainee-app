@@ -1,0 +1,34 @@
+<div class="chart-container">
+  <div class="chart-header">
+    <span class="title">TOP CHART</span>
+  </div>
+
+  <div class="chart-body">
+    <div class="user-info">
+      <div class="user-info-heads">
+        <span>Name</span>
+
+        <span>Total XP</span>
+      </div>
+
+      <mat-list class="user-list">
+        <mat-list-item *ngFor="let user of users">
+          <img matListAvatar class="user-image" [src]="user.avatar" (click)="openDialog()"/>
+          <div matLine>
+            <span class="user-title">{{ user.name }}</span>
+
+            <span>{{ user.surname }}</span>
+          </div>
+          <span class="exp">{{ user.xp }} xp </span>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="chart-list">
+      <mat-list>
+        <mat-list-item *ngFor="let user of users">
+          <div class="bar" [style.background-color]="user.color" [style.width]="user.size"></div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+@import "assets/colors/colors.scss";
+@import "assets/material-styles/material-styles.scss";
+@import "../node_modules/font-awesome/scss/font-awesome.scss";
+
+html,
+body {
+  height: 100%;
+  background-color: #000;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.page-block {
+  height: 100%;
+  width: 100%;
+}
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

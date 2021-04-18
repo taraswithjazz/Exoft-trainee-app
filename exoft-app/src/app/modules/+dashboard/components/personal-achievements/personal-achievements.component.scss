@@ -1,0 +1,48 @@
+@import "../../../../../assets/colors/colors.scss";
+
+.personal-achievements-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-between;
+  color: $text-color;
+
+  .personal-achievements-header {
+    display: flex;
+    justify-content: space-between;
+
+    .title {
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .header-button {
+      height: 30px;
+      background-color: $primary-color;
+      color: $text-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+
+  .mat-list {
+    .achievement-granted {
+      font-size: 12px;
+    }
+
+    .coin {
+      background: gold;
+      border-radius: 50%;
+      width: 15px;
+      height: 15px;
+    }
+
+    .achievement-exp {
+      color: gold;
+    }
+  }
+}

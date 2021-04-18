@@ -1,0 +1,61 @@
+@import "../../../../../assets/colors/colors.scss";
+
+.badges-container {
+  padding: 15px;
+  color: $text-color;
+  flex-direction: column;
+
+  .badges-header {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .badges-body {
+    width: 100%;
+    padding-top: 15%;
+    flex-direction: column;
+
+    .xp-count {
+      font-size: 100px;
+      line-height: 100px;
+      color: $primary-color;
+    }
+
+    .exp {
+      font-size: 18px;
+      color: $text-color;
+    }
+
+    .number {
+      font-size: 50px;
+      line-height: 50px;
+      color: $primary-color;
+    }
+
+    .description {
+      font-size: 16px;
+      color: $text-color;
+    }
+  }
+
+  .badges-footer {
+    width: 100%;
+    padding-top: 13%;
+
+    .footer-text {
+      // padding-top: 24px;
+      font-size: 12px;
+      justify-content: space-around;
+      color: $text-color;
+      width: 100%;
+
+      .dot {
+        background-color: $primary-color;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

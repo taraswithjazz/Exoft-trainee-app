@@ -1,0 +1,98 @@
+@import "../../../../../assets/colors/colors.scss";
+
+.achievements-container {
+  padding: 15px;
+  color: $text-color;
+
+  .title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  .xp-count {
+    margin-left: 10px;
+    background-color: $primary-color;
+    padding: 0 10px 0 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: $text-color;
+  }
+
+  .achievements-body {
+    padding-top: 30px;
+    overflow-y: auto;
+    height: 906px;
+    position: relative;
+
+    .user-image {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      -moz-border-radius: 8px;
+      -webkit-border-radius: 8px;
+      border-radius: 50%;
+      background-image: url("/assets/images/avatar.png");
+      background-size: cover;
+      background-position: center;
+      border: $primary-color 1px solid;
+      position: absolute;
+    }
+
+    .achievements-item-header {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      margin-left: 20px;
+      padding: 10px 0 0 30px;
+      border-left: 2px solid grey;
+
+      .username {
+        color: $primary-color;
+      }
+      .time {
+        font-size: 12px;
+      }
+    }
+
+    .achievements-item-body {
+      padding-top: 10px;
+      margin-left: 20px;
+      border-left: 2px solid grey;
+
+      .achivement-info {
+        padding: 0 0 0 20px;
+      }
+
+      .records-button {
+        padding-top: 10px;
+        padding-bottom: 20px;
+
+        .records {
+          height: 24px;
+          background-color: lightskyblue;
+          color: $text-color;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 10px;
+          text-align: center;
+          width: 30%;
+          margin-left: 20px;
+        }
+      }
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: grey;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $primary-color;
+  }
+}

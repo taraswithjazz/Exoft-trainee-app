@@ -4,18 +4,18 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   {
-    path: 'dashboard',
-    loadChildren: () => import('./+dashboard/dashboard.module').then(module => module.DashboardModule)
+    path: 'auth',
+    loadChildren: () => import('./modules/+auth/auth.module').then(module => module.AuthModule)
   },
   {
-    path: 'badges',
-    loadChildren: () => import('./+badges/badges.module').then(module => module.BadgesModule)
+    path: '',
+    loadChildren: () => import('./modules/layout/layout.module').then(module => module.LayoutModule)
   },
-  { path: '**', redirectTo: 'dashboard' }
+  { path: '**', redirectTo: 'auth' }
 ];
 
 @NgModule({

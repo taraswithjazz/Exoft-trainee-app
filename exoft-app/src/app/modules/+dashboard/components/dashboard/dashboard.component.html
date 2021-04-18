@@ -1,0 +1,32 @@
+<mat-grid-list cols="5" [gutterSize]="'15px'" rowHeight="185px">
+  <mat-grid-tile [colspan]="4" [rowspan]="1">
+    <app-greetings class="greetings page-block"></app-greetings>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="5">
+    <app-exoft-achievements
+      class="exoft-achievements page-block"
+    ></app-exoft-achievements>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <app-personal-achievements class="personal-achievements page-block">
+    </app-personal-achievements>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <app-thanks class="thanks page-block"></app-thanks>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="2" [rowspan]="2">
+    <app-top-chart class="top-chart page-block"></app-top-chart>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="1" [rowspan]="2">
+    <app-badges class="badges page-block"></app-badges>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="3" [rowspan]="2">
+    <app-challenges class="challenges page-block"></app-challenges>
+  </mat-grid-tile>
+</mat-grid-list>

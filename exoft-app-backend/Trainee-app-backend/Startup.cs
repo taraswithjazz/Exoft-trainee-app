@@ -6,11 +6,17 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Trainee_app_backend.Data;
+using Trainee_app_backend.Data.Entities;
+using Trainee_app_backend.Data.Repositories;
+using Trainee_app_backend.Data.Services;
+using TraineeAppBackend.Data.Entities;
 
 namespace TraineeAppBackend
 {
@@ -23,10 +29,9 @@ namespace TraineeAppBackend
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddAutoMapper(typeof(Startup));
             services.AddCors();
 
             services.AddControllers();
@@ -34,9 +39,17 @@ namespace TraineeAppBackend
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TraineeAppBackend", Version = "v1" });
             });
-        }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
+            services.AddScoped<IAchievementRepository, AchievementRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddTransient<IAchievementService, AchievementService>();
+            services.AddTransient<IUserService, UserService>();
+
+            services.AddDbContext<GmfctnContext>(options => options.UseSqlServer(Configuration.GetConnectionString("MyConnection"), x => x.MigrationsAssembly("Trainee-app-backend")));
+        }
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

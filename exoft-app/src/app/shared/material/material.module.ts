@@ -11,6 +11,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { MatTableModule } from '@angular/material/table';
     MatMenuModule,
     MatGridListModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    MatDialogModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }

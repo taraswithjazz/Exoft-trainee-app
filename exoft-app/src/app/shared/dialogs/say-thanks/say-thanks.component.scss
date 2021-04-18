@@ -1,0 +1,44 @@
+@import "../../../../assets/colors/colors.scss";
+
+.thanks-container {
+  .thanks-header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    color: $text-color;
+
+    .cancel-button:hover {
+      cursor: pointer;
+    }
+  }
+
+  .thanks-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 20px 0 20px;
+
+    .text {
+      font-size: 18px;
+      color: $text-color;
+    }
+
+    .message {
+      width: 100%;
+      padding: 20px 0 20px 0;
+      color: $text-color;
+    }
+  }
+  .thanks-footer {
+    .thanks-button {
+      background-color: $primary-color;
+      color: $text-color;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 22px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,64 @@
+@import "../../../../assets/colors/colors.scss";
+
+@mixin flexy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.achievement-modal-container {
+  color: $text-color;
+  background-color: $background-color;
+
+  .cancel {
+    display: flex;
+    justify-content: flex-end;
+
+    .cancel-button {
+      color: $primary-color;
+    }
+
+    .cancel-button:hover {
+      cursor: pointer;
+    }
+  }
+
+  .title {
+    @include flexy();
+
+    .title-text {
+      font-size: 18px;
+      padding: 10px;
+    }
+  }
+
+  .select {
+    border-bottom: 1px solid $text-color;
+    height: 20px;
+    margin: 10px 0 10px 0;
+  }
+
+  .message {
+    width: 100%;
+
+    .label {
+      color: $text-color;
+    }
+  }
+
+  .submit {
+    @include flexy();
+
+    .submit-button {
+      background-color: $primary-color;
+      color: $text-color;
+      width: 30%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 30px;
+      border-radius: 0;
+      box-shadow: none;
+    }
+  }
+}

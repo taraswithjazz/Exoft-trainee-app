@@ -1,0 +1,138 @@
+@import "../../../assets/colors/colors.scss";
+
+@mixin flexbox {
+  display: flex;
+  align-items: center;
+}
+@mixin image-cover {
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.mat-sidenav-container {
+  height: 100%;
+
+  .mat-sidenav {
+    background-color: $background-color;
+    width: 250px;
+
+    .sidenav-container-header {
+      @include flexbox();
+      justify-content: flex-end;
+      color: $text-color;
+      height: 64px;
+
+      .nav-toggle-button {
+        margin-left: 54px;
+
+        .material-icons {
+          font-size: 16px;
+        }
+      }
+    }
+
+    .sidenav-container-body {
+      @include flexbox();
+      flex-direction: column;
+      color: $text-color;
+      padding-top: 40px;
+
+      .sidenav-container-image {
+        @include image-cover();
+        background-image: url("/assets/images/avatar.png");
+        height: 150px;
+        width: 150px;
+      }
+
+      .sidenav-container-button {
+        margin-top: 8px;
+        width: 144px;
+        background-color: $primary-color;
+        color: $text-color;
+      }
+
+      .total {
+        margin-top: 16px;
+
+        .achievements {
+          color: $primary-color;
+          font-size: 18px;
+        }
+      }
+
+      .exp {
+        .achievements {
+          color: $primary-color;
+          font-size: 18px;
+        }
+      }
+
+      .sidenav-navigation-item {
+        font-size: 24px;
+        font-weight: 300;
+      }
+
+      .container-active {
+        text-decoration: underline $primary-color 4px;
+        text-underline-offset: 0.2em;
+        color: $primary-color;
+      }
+    }
+  }
+  .mat-sidenav-content {
+    .mat-toolbar {
+      @include flexbox();
+      justify-content: space-between;
+      background-color: $background-color;
+      color: $text-color;
+
+      .menu {
+        @include flexbox();
+        height: 100%;
+      }
+
+      .router-link-active {
+        border-top: $primary-color solid 4px;
+        border-radius: 0;
+        color: $primary-color;
+      }
+
+      .header-image {
+        @include image-cover;
+        background-image: url("/assets/images/avatar.png");
+        height: 40px;
+        width: 40px;
+        margin-right: 10px;
+      }
+      .username {
+        font-size: 12px;
+      }
+
+      .logout-icon {
+        @include flexbox();
+        justify-content: center;
+
+        .material-icons {
+          @include flexbox();
+          justify-content: center;
+          font-size: 32px;
+        }
+      }
+    }
+  }
+
+  .mat-button-focus-overlay {
+    display: none;
+  }
+
+  .mat-drawer-content {
+    background-color: rgb(50, 50, 50);
+  }
+}
+
+button.mat-menu-item {
+  color: $text-color;
+}
